@@ -7,4 +7,16 @@ public class Client extends Personne{
     private Boolean estAbonne;
     private int SoldeActuel;
     private Fonct.Historique.Historique Historique;
+
+    public void LouerFilm( ){
+
+    }
+
+    public void RendreFilm(){
+
+    }
+
+    public void ConsulterHistorique(){
+
+    }
 }
