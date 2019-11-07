@@ -9,9 +9,9 @@
 
 <SplitPane dividerPositions="0.47157190635451507" maxHeight="-Infinity" style="-fx-background-color:orange;" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
   <items>
-    <AnchorPane >
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
-            <ListView layoutY="-1.0"  />
+            <ListView layoutY="-1.0" prefHeight="398.0" prefWidth="279.0" />
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
