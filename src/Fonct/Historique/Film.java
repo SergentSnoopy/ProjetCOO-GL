@@ -7,6 +7,14 @@ public class Film {
     private Boolean TopVente;
     private String Affiche;
 
+    public Film(String titre, String Realisateur,int NbDispo, Boolean TopVente, String Affiche){
+        this.Titre=titre;
+        this.Realisateur=Realisateur;
+        this.NbDispo=NbDispo;
+        this.TopVente=TopVente;
+        this.Affiche=Affiche;
+    }
+
     public void RetirerUnFilm(){
         NbDispo--;
     }
