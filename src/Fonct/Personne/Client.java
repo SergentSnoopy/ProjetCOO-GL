@@ -8,7 +8,7 @@ public class Client extends Personne{
     private int SoldeActuel;
     private Fonct.Historique.Historique Historique;
 
-    public void LouerFilm( ){
+    public void LouerFilm(){
 
     }
 
@@ -17,6 +17,21 @@ public class Client extends Personne{
     }
 
     public void ConsulterHistorique(){
+
+    }
+
+    public void DevenirPremium(){
+
+
+    }
+
+    public void Recharge(){
+
+
+    }
+
+    public void DemanderFilm(){
+
 
     }
 }
