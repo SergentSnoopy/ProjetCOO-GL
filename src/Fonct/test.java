@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class test {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         Historique test_hist = new Historique();
         test_hist.addBancaire("01234",200);
 //        ArrayList<Film> listFilm=new ArrayList<Film>();
@@ -24,6 +24,10 @@ public class test {
         BD_locale bd=new BD_locale(System.getProperty("user.dir")+"/src/BDD/BDlocale");
         System.out.println(bd.getFilms().get(1).getNbDispo());
         test_hist.addLocation("Terminator","James Cameron",true,bd.getFilms());
+        test_hist.voirHistBancaire();
+        test_hist.voirHistLocation();
+        Thread.sleep(3000);
+        test_hist.retournerLocation("Terminator","James Cameron",true,bd.getFilms());
         test_hist.voirHistBancaire();
         test_hist.voirHistLocation();
         System.out.println(bd.getFilms().get(1).getNbDispo());

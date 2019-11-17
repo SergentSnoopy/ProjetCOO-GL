@@ -70,7 +70,7 @@ public class Historique {
         for(int i=0; i<listeHistBancaire.size();i++){
             res=res+listeHistBancaire.get(i).getNumCarte()+";"+listeHistBancaire.get(i).getDate()+";"+listeHistBancaire.get(i).getMontant()+"\n";
         }
-        System.out.println(res);
+        System.out.print(res);
     }
 
     public void voirHistLocation(){
@@ -78,6 +78,6 @@ public class Historique {
         for(int i=0; i<listeHistLocation.size();i++){
             res=res+listeHistLocation.get(i).getDate()+";"+listeHistLocation.get(i).getTypeDaction()+";"+listeHistLocation.get(i).getTitreFilm()+";"+listeHistLocation.get(i).getRealisateur()+";\n";
         }
-        System.out.println(res);
+        System.out.print(res);
     }
 }
