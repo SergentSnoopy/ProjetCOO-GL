@@ -4,15 +4,25 @@ public class Film {
     private String Titre;
     private String Realisateur;
     private int NbDispo;
+    private String resume;
     private Boolean TopVente;
     private String Affiche;
 
-    public Film(String titre, String Realisateur,int NbDispo, Boolean TopVente, String Affiche){
+    public Film(String titre, String Realisateur,String resume, String Affiche, int NbDispo, Boolean TopVente){
         this.Titre=titre;
         this.Realisateur=Realisateur;
+        this.resume=resume;
         this.NbDispo=NbDispo;
         this.TopVente=TopVente;
         this.Affiche=Affiche;
+    }
+
+    public String getResume() {
+        return resume;
+    }
+
+    public void setResume(String resume) {
+        this.resume = resume;
     }
 
     public void RetirerUnFilm(){

@@ -72,4 +72,12 @@ public class Historique {
         }
         System.out.println(res);
     }
+
+    public void voirHistLocation(){
+        String res="";
+        for(int i=0; i<listeHistLocation.size();i++){
+            res=res+listeHistLocation.get(i).getDate()+";"+listeHistLocation.get(i).getTypeDaction()+";"+listeHistLocation.get(i).getTitreFilm()+";"+listeHistLocation.get(i).getRealisateur()+";\n";
+        }
+        System.out.println(res);
+    }
 }
