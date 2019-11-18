@@ -3,39 +3,63 @@ package Fonct.Personne;
 import Fonct.Historique.Film;
 import Fonct.Historique.Historique;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Client extends Personne {
     private String nom;
-    private String nrenom;
+    private String prenom;
     private String adresse;
     private Boolean estAbonne;
     private int soldeActuel;
     private Historique historique;
 
-    public Client(String nom, String nrenom, String adresse, Boolean estAbonne, int soldeActuel, Historique historique) {
+    public Client(String nom, String prenom, String adresse, Boolean estAbonne, int soldeActuel, Historique historique) throws IOException {
         this.nom = nom;
-        this.nrenom = nrenom;
+        this.prenom = prenom;
         this.adresse = adresse;
         this.estAbonne = estAbonne;
         this.soldeActuel = soldeActuel;
         this.historique = historique;
+        chargeBD();
     }
 
-    public void louerFilm(String titre, String realisateur, ArrayList<Film> listeFilm){
-        for (int i=0;i<listeFilm.size();i++) {
-            if (titre == listeFilm.get(i).getTitre()) {
-                if(realisateur == listeFilm.get(i).getRealisateur()) {
-                    if(listeFilm.get(i).getNbDispo()>0){
-                        historique.addLocation(titre,realisateur,estAbonne,listeFilm);
+    public Client(String nom, String prenom, String adresse) throws IOException {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.adresse = adresse;
+        this.estAbonne = false;
+        this.soldeActuel = 0;
+        this.historique = new Historique();
+        chargeBD();
+    }
+
+    public void louerFilm(String titre, String realisateur){
+        for (int i=0;i<getListefilm().size();i++) {
+            if (titre.equals(getListefilm().get(i).getTitre())) {
+                if(realisateur.equals(getListefilm().get(i).getRealisateur())) {
+                    System.out.println(getListefilm().get(i).getNbDispo());
+                    if(getListefilm().get(i).getNbDispo()>0){
+                        historique.addLocation(titre,realisateur,estAbonne);
+                        getListefilm().get(i).louerUnFilm();
+                        break;
                     }
                 }
             }
         }
     }
 
-    public void rendreFilm(String titre, String realisateur, ArrayList<Film> listeFilm){
-        historique.retournerLocation(titre,realisateur,estAbonne,listeFilm);
+    public void rendreFilm(String titre, String realisateur){
+
+        for (int i=0;i<getListefilm().size();i++) {
+            if (titre.equals(getListefilm().get(i).getTitre())) {
+                if(realisateur.equals(getListefilm().get(i).getRealisateur())) {
+                    historique.retournerLocation(titre,realisateur,estAbonne,getListefilm());
+                    getListefilm().get(i).rendreUnFilm();
+                    break;
+                }
+            }
+        }
     }
 
     public void voirHistorique(){
@@ -73,11 +97,11 @@ public class Client extends Personne {
     }
 
     public String getNrenom() {
-        return nrenom;
+        return prenom;
     }
 
-    public void setNrenom(String nrenom) {
-        this.nrenom = nrenom;
+    public void setNrenom(String prenom) {
+        this.prenom = prenom;
     }
 
     public String getAdresse() {

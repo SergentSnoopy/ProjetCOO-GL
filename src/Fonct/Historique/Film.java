@@ -25,11 +25,11 @@ public class Film {
         this.resume = resume;
     }
 
-    public void RetirerUnFilm(){
+    public void louerUnFilm(){
         NbDispo--;
     }
 
-    public void RendreUnFilm(){
+    public void rendreUnFilm(){
         NbDispo++;
     }
 

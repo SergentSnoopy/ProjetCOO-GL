@@ -1,24 +1,26 @@
 package Fonct.Personne;
 
+import java.io.IOException;
+
 public class Technicien extends Personne {
 
-    public Technicien(String newNum) {
-        super(newNum);
+    public Technicien() throws IOException {
+        super();
     }
 
-    public void AjoutNouveaute(){
-
-    }
-
-    public void AfficherStatistique(){
+    public void ajoutNouveaute(){
 
     }
 
-    public void MajDB(){
+    public void afficherStatistique(){
 
     }
 
-    public void MajTopFilm(){
+    public void majDB(){
+
+    }
+
+    public void majTopFilm(){
 
     }
 }
