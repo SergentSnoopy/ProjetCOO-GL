@@ -11,7 +11,7 @@
       <Button layoutX="250.0" layoutY="240.0" mnemonicParsing="false"  text="Ejecter Carte" />
       <Button layoutX="256.0" layoutY="200.0" mnemonicParsing="false"  text="Recharger" />
       <Button layoutX="274.0" layoutY="155.0" mnemonicParsing="false"  text="Vip" />
-      <Button layoutX="256.0" layoutY="108.0" mnemonicParsing="false"  text="Historique" />
+      <Button layoutX="256.0" layoutY="108.0" mnemonicParsing="false"  text="Historique" onAction="#GoHist"/>
       <ImageView fx:id="logo" fitHeight="86.0" fitWidth="198.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#GoHome">
          <image>
             <Image url="@../Img/logo.png" />

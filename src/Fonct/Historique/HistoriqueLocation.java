@@ -57,4 +57,13 @@ public class HistoriqueLocation {
         this.prixLocation=prixLocation;
         this.typeDaction=typeDaction;
     }
+
+    @Override
+    public String toString() {
+        return  "date='" + date + '\'' +
+                ", titreFilm='" + titreFilm + '\'' +
+                ", realisateur='" + realisateur + '\'' +
+                ", prixLocation=" + prixLocation +
+                ", typeDaction='" + typeDaction;
+    }
 }
