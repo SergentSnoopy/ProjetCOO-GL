@@ -2,6 +2,7 @@ package Fonct.Personne;
 
 import Fonct.Historique.Film;
 import Fonct.Historique.Historique;
+import java.lang.Double;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -15,6 +16,8 @@ public class Client extends Personne {
     private Historique historique;
 
     public Client(String nom, String prenom, String adresse, Boolean estAbonne, int soldeActuel, Historique historique) throws IOException {
+        setNumCarte(""+((int)(Math.random() *1000000+1000000)));
+
         this.nom = nom;
         this.prenom = prenom;
         this.adresse = adresse;
@@ -25,6 +28,8 @@ public class Client extends Personne {
     }
 
     public Client(String nom, String prenom, String adresse) throws IOException {
+        setNumCarte(""+((int)(Math.random()*1000000+1000000)));
+
         this.nom = nom;
         this.prenom = prenom;
         this.adresse = adresse;

@@ -13,7 +13,9 @@ import java.util.Date;
 
 public class test {
     public static void main(String[] args) throws IOException, InterruptedException {
-        Client c=new Client("Sollier","Mathieu","gare",false,0,new Historique());
+
+        Client c=new Client("Sollier","Mathieu","gare");
+        System.out.println(c.getNumCarte());
         c.rechargerCompte("01234",200);
 
         System.out.println("Working Directory = " +
