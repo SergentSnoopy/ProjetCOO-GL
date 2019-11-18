@@ -1,5 +1,6 @@
-package IO;
-//package Fonct.Input_Output;
+package Fonct.Input_Output;
+
+import Fonct.Historique.Film;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -10,27 +11,28 @@ import java.util.Map;
 public class BD_locale extends BD {
 	
 	private class FilmWrapper{
-		Fonct.Film film;
+		Film film;
 		int nbLoc;
 		
-		public FilmWrapper(Fonct.Film f,int n) {
+		public FilmWrapper(Film f,int n) {
 			this.film = f;
 			this.nbLoc = n;
 		}
 	}
 	
 	private ArrayList<FilmWrapper> films;
-	private static int nbCol = 7;
+	private static int nbCol = 6;
 	
     public BD_locale(String path) throws FileNotFoundException, IOException {
 		super(path);
 		this.films = new ArrayList<FilmWrapper>();
 		Infos films = super.getInfo("film.txt");
-		for(ArrayList<String> info : films){
+		for(int i=1;i<films.size();i++){
+			ArrayList<String> info=films.get(i);
 			if(info.size() == nbCol) {
-				Fonct.Film film = new Fonct.Film();
+				Film film = new Film(info.get(0),info.get(1),info.get(2),info.get(3),Integer.parseInt(info.get(4)),Boolean.parseBoolean(info.get(5)));
 				// remplir
-				this.films.add(new FilmWrapper(film,Integer.parseInt(info.get(nbCol-1))));
+				this.films.add(new FilmWrapper(film,Integer.parseInt(info.get(nbCol-2))));
 			}
 		}
 	}
@@ -42,8 +44,8 @@ public class BD_locale extends BD {
     	return null;
     }
     
-    public ArrayList<Fonct.Film> getFilms(){
-    	ArrayList<Fonct.Film> films = new ArrayList<Fonct.Film>();
+    public ArrayList<Film> getFilms(){
+    	ArrayList<Film> films = new ArrayList<Film>();
     	for(FilmWrapper fw : this.films)
     		films.add(fw.film);
     	return films;
@@ -56,9 +58,9 @@ public class BD_locale extends BD {
     	return -1;
     }
     
-    public void commit(ArrayList<Fonct.Film> films) {
+    public void commit(ArrayList<Film> films) {
     	ArrayList<FilmWrapper> newFilms = new ArrayList<FilmWrapper>();
-    	for(Fonct.Film film : films) {
+    	for(Film film : films) {
     		FilmWrapper fw = this.findFilmWithKey(film.getTitre());
     		if(fw != null) {
     			int n = film.getNbDispo() - fw.nbLoc;
@@ -73,7 +75,7 @@ public class BD_locale extends BD {
     public void write() throws IOException {
     	super.write("film.txt", new Infos.Writable<FilmWrapper>(this.films) {
     		public String parse(FilmWrapper fw) {
-    			Fonct.Film f = fw.film;
+    			Film f = fw.film;
     			// à compléter (il manque des getters)
     			//return f.getTitre()+";"+f.getRealisateur()+";"+;
     			return "";
