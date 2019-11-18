@@ -21,7 +21,7 @@ public class test {
         System.out.println("Working Directory = " +
                 System.getProperty("user.dir")+"/src/BDD/BDlocale");
 
-        BD_locale bd=new BD_locale(System.getProperty("user.dir")+"/src/BDD/BDlocale");
+        BD_locale bd=new BD_locale(System.getProperty("user.dir")+"\\src\\BDD\\BDlocale");
         System.out.println(bd.getFilms().get(1).getNbDispo());
         test_hist.addLocation("Terminator","James Cameron",true,bd.getFilms());
         test_hist.voirHistBancaire();
