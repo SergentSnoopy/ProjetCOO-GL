@@ -2,6 +2,10 @@ package Fonct.Personne;
 
 public class Technicien extends Personne {
 
+    public Technicien(String newNum) {
+        super(newNum);
+    }
+
     public void AjoutNouveaute(){
 
     }

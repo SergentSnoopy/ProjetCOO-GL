@@ -1,5 +1,7 @@
 package Fonct.Historique;
 
+import Fonct.Personne.Client;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
