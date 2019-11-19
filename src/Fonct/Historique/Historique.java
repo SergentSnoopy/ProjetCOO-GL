@@ -11,8 +11,34 @@ public class Historique {
 
     private ArrayList<HistoriqueLocation> listeHistLocation;
     private ArrayList<HistoriqueBancaire> listeHistBancaire;
+    String numCarteUtilisateur;
 
-    public Historique(){
+    public ArrayList<HistoriqueLocation> getListeHistLocation() {
+        return listeHistLocation;
+    }
+
+    public void setListeHistLocation(ArrayList<HistoriqueLocation> listeHistLocation) {
+        this.listeHistLocation = listeHistLocation;
+    }
+
+    public ArrayList<HistoriqueBancaire> getListeHistBancaire() {
+        return listeHistBancaire;
+    }
+
+    public void setListeHistBancaire(ArrayList<HistoriqueBancaire> listeHistBancaire) {
+        this.listeHistBancaire = listeHistBancaire;
+    }
+
+    public String getNumCarteUtilisateur() {
+        return numCarteUtilisateur;
+    }
+
+    public void setNumCarteUtilisateur(String numCarteUtilisateur) {
+        this.numCarteUtilisateur = numCarteUtilisateur;
+    }
+
+    public Historique(String numCarteUtilisateur){
+        this.numCarteUtilisateur=numCarteUtilisateur;
         listeHistBancaire=new ArrayList<>();
         listeHistLocation=new ArrayList<>();
     }

@@ -15,8 +15,8 @@ public class Client extends Personne {
     private int soldeActuel;
     private Historique historique;
 
-    public Client(String nom, String prenom, String adresse, Boolean estAbonne, int soldeActuel, Historique historique) throws IOException {
-        setNumCarte(""+((int)(Math.random() *1000000+1000000)));
+    public Client(String nom, String prenom, String adresse, Boolean estAbonne, String numCarte, int soldeActuel, Historique historique) throws IOException {
+        setNumCarte(numCarte);
 
         this.nom = nom;
         this.prenom = prenom;
