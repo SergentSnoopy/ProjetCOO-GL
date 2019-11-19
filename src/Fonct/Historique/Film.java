@@ -72,4 +72,9 @@ public class Film {
     public void setAffiche(String affiche) {
         Affiche = affiche;
     }
+
+    @Override
+    public String toString() {
+        return Titre;
+    }
 }
