@@ -51,11 +51,13 @@ public class Historique {
         System.out.print(res);
     }
 
-    public void voirHistLocation(){
+    public ArrayList<HistoriqueLocation> voirHistLocation(){
         String res="";
         for(int i=0; i<listeHistLocation.size();i++){
             res=res+listeHistLocation.get(i).getDate()+";"+listeHistLocation.get(i).getTypeDaction()+";"+listeHistLocation.get(i).getTitreFilm()+";"+listeHistLocation.get(i).getRealisateur()+";\n";
         }
         System.out.print(res);
+
+        return this.listeHistLocation;
     }
 }
