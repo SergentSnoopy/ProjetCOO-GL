@@ -16,7 +16,7 @@ public class Client extends Personne {
     private Historique historique;
 
     public Client(String numCarte,String nom, String prenom, String adresse, Boolean estAbonne, int soldeActuel, Historique historique) throws IOException {
-        setNumCarte(numCarte);
+        super(numCarte);
 
         this.nom = nom;
         this.prenom = prenom;
@@ -101,11 +101,11 @@ public class Client extends Personne {
         this.nom = nom;
     }
 
-    public String getNrenom() {
+    public String getPrenom() {
         return prenom;
     }
 
-    public void setNrenom(String prenom) {
+    public void setPrenom(String prenom) {
         this.prenom = prenom;
     }
 

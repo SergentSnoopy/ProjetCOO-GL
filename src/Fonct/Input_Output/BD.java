@@ -4,7 +4,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.OpenOption;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -29,6 +31,10 @@ public abstract class BD {
 	}
 	
 	public <T> void write(String path,Infos.Writable<T> w) throws IOException {
-		Files.write(Paths.get(this.path+"/"+path), w.getData());
+		write(path,w,StandardOpenOption.CREATE,StandardOpenOption.WRITE,StandardOpenOption.TRUNCATE_EXISTING);
+	}
+	
+	public <T> void write(String path,Infos.Writable<T> w, OpenOption ... option) throws IOException {
+		Files.write(Paths.get(this.path+"/"+path), w.getData(), option);
 	}
 }

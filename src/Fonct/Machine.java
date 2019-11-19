@@ -1,7 +1,7 @@
 package Fonct;
 
 import Fonct.Historique.Film;
-import Fonct.Input_Output.BD_locale;
+import Fonct.Input_Output.BD_Locale;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -14,7 +14,7 @@ public class Machine {
     }
 
     public void chargeBD() throws IOException {
-        BD_locale bd=new BD_locale(System.getProperty("user.dir")+"/src/BDD/BDlocale");
+        BD_Locale bd=new BD_Locale(System.getProperty("user.dir")+"/src/BDD/BDlocale");
         listefilm=bd.getFilms();
     }
 }

@@ -4,8 +4,8 @@ import java.io.IOException;
 
 public class Technicien extends Personne {
 
-    public Technicien() throws IOException {
-        super();
+    public Technicien(String numCarte) throws IOException {
+        super(numCarte);
     }
 
     public void ajoutNouveaute(){
