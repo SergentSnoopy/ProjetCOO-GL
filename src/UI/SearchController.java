@@ -59,7 +59,7 @@ public class SearchController extends Controller implements Initializable {
     @FXML
     public void Rent(){
 
-        hist.addLocation(titre.getText(),"",Boolean.FALSE,bdl.getFilms());
+        hist.addLocation(titre.getText(),"",Boolean.FALSE);
         System.out.println(hist.voirHistLocation());
     }
 
