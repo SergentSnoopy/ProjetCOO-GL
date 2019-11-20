@@ -143,6 +143,23 @@ public class BD_Distante extends BD {
 				return t;
 		return null;
 	}
+	
+	public Boolean supprimerClient(Client c) {
+		for(int i = 0; i < clients.size(); i++) {
+			if(c.getNumCarte().equals(clients.get(i).getNumCarte())) {
+				clients.remove(i);
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public Boolean addClient(Client c) {
+		if(this.identification(c.getNumCarte()) != null)
+			return false;
+		clients.add(c);
+		return true;
+	}
 
 	public void commit() throws IOException {
 		// reconstruction des historiques
