@@ -46,8 +46,8 @@ public class BD_Distante extends BD {
 		// hist bancaire
 		Infos histsBancaires = super.getInfo("HistoriqueBancaire.txt");
 		for(ArrayList<String> info : histsBancaires){
-			HistoriqueBancaire hB = new HistoriqueBancaire(info.get(1),info.get(2)
-					,Integer.parseInt(info.get(3)));
+			HistoriqueBancaire hB = new HistoriqueBancaire(info.get(1)
+					,Integer.parseInt(info.get(2)));
 			Historique hist = findClientHist(info.get(0));
 			if(hist != null)
 				hist.getListeHistBancaire().add(hB);
@@ -185,7 +185,7 @@ public class BD_Distante extends BD {
 		// historique bancaire
 		super.write("HistoriqueBancaire.txt", new Infos.Writable<HBWrapper>(hbs) {
 			public String parse(HBWrapper hb) {
-				return hb.numCarte+";"+hb.hb.getNumCarte()+";"+hb.hb.getDate()+";"
+				return hb.numCarte+";"+hb.hb.getDate()+";"
 						+hb.hb.getMontant();
 			}
 		});// historique locations

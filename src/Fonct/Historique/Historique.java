@@ -57,7 +57,7 @@ public class Historique {
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date date = new Date();
 
-        listeHistBancaire.add(new HistoriqueBancaire(NumCarte,dateFormat.format(date),Montant));
+        listeHistBancaire.add(new HistoriqueBancaire(dateFormat.format(date),Montant));
     }
 
     public void retournerLocation(String titre, String realisateur, Boolean estAbonne,ArrayList<Film> listeFilm){
@@ -72,7 +72,7 @@ public class Historique {
     public void voirHistBancaire(){
         String res="";
         for(int i=0; i<listeHistBancaire.size();i++){
-            res=res+listeHistBancaire.get(i).getNumCarte()+";"+listeHistBancaire.get(i).getDate()+";"+listeHistBancaire.get(i).getMontant()+"\n";
+            res=res+listeHistBancaire.get(i).getDate()+";"+listeHistBancaire.get(i).getMontant()+"\n";
         }
         System.out.print(res);
     }
