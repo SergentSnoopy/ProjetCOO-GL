@@ -17,6 +17,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+
+        Controller.numcl=getParameters().getRaw().get(0);
         Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
         primaryStage.setTitle("DVD Manager");
         primaryStage.setScene(new Scene(root, 640, 400));

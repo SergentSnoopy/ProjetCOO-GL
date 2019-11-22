@@ -26,4 +26,10 @@ public class HistoriqueBancaire {
         this.Date=Date;
         this.Montant=Montant;
     }
+
+    @Override
+    public String toString() {
+        return "Date:" + Date + ' ' +
+                ", Montant:" + Montant+"E";
+    }
 }

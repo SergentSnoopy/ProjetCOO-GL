@@ -46,6 +46,7 @@ public class BD_Distante extends BD {
 		// hist bancaire
 		Infos histsBancaires = super.getInfo("HistoriqueBancaire.txt");
 		for(ArrayList<String> info : histsBancaires){
+			System.out.println(info.get(0));
 			HistoriqueBancaire hB = new HistoriqueBancaire(info.get(1)
 					,Integer.parseInt(info.get(2)));
 			Historique hist = findClientHist(info.get(0));

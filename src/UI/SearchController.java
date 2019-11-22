@@ -5,11 +5,13 @@ import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -38,6 +40,10 @@ public class SearchController extends Controller {
     public ImageView aff;
     @FXML
     public TextField ts;
+    @FXML
+    public Button rent;
+    @FXML
+    public  Button ask;
 
 
     public SearchController() throws IOException {
@@ -47,6 +53,8 @@ public class SearchController extends Controller {
     public void setsearch(String s){
         this.ts.setText(s);
         this.afficheFilm(s);
+        if (s.isEmpty())
+            rent.setVisible(false);
         ts.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
@@ -58,9 +66,27 @@ public class SearchController extends Controller {
         listfilm.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Film>() {
             public void changed(ObservableValue<? extends Film> observable,
                                 Film oldValue, Film newValue) {
-                titre.setText(newValue.getTitre());
-                desc.setText(newValue.getResume());
-                aff.setImage(new Image(new File("src/Img/".replace("/",System.getProperty("file.separator"))+newValue.getAffiche()).toURI().toString()));;
+                if (newValue!=null) {
+                    titre.setText(newValue.getTitre());
+                    desc.setText(newValue.getResume());
+                    aff.setImage(new Image(new File("src/Img/".replace("/", System.getProperty("file.separator")) + newValue.getAffiche()).toURI().toString()));
+                    if(bdl.getLoc(newValue)!=-1) {
+                        ask.setVisible(false);
+                        rent.setVisible(true);
+                    }
+                    else{
+                        rent.setVisible(false);
+                        ask.setVisible(true);
+                    }
+
+                }
+                else{
+                    titre.setText("");
+                    desc.setText("");
+                    aff.setImage(null);
+                    rent.setVisible(false);
+                    ask.setVisible(false);
+                }
             }
         });
     }
@@ -81,10 +107,17 @@ public class SearchController extends Controller {
     }
 
     @FXML
-    public void Rent(){
+    public void Rent() throws IOException {
 
-        hist.addLocation(titre.getText(),"",Boolean.FALSE);
-        System.out.println(hist.voirHistLocation());
+        cl.louerFilm(((Film) listfilm.getSelectionModel().getSelectedItem()).getTitre(),((Film) listfilm.getSelectionModel().getSelectedItem()).getRealisateur());
+        bdd.commit();
+    }
+
+    @FXML
+    public void Ask() throws IOException {
+
+        cl.demanderFilm(((Film) listfilm.getSelectionModel().getSelectedItem()).getTitre(),((Film) listfilm.getSelectionModel().getSelectedItem()).getRealisateur());
+        bdd.commit();
     }
 
     public void afficheFilm(String s){
@@ -96,5 +129,17 @@ public class SearchController extends Controller {
             if(f.getTitre().toLowerCase().contains(ts.getText().toLowerCase()))
                 listfilm.getItems().add(f);
         }
+        films = this.bdd.getFilms();
+        for (Film f :  films)
+        {
+            if (!listfilm.getItems().contains(f))
+                if(f.getTitre().toLowerCase().contains(ts.getText().toLowerCase()))
+                    listfilm.getItems().add(f);
+        }
+        listfilm.getItems().sort((o1,o2)->{
+            if(o1.equals(o2)) return 0;
+            return ((Film)o1).getTitre().compareTo(((Film)o2).getTitre());
+        });
+
     }
 }

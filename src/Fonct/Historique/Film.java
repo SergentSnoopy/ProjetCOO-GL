@@ -1,5 +1,7 @@
 package Fonct.Historique;
 
+import java.util.Objects;
+
 public class Film {
     private String Titre;
     private String Realisateur;
@@ -71,6 +73,19 @@ public class Film {
 
     public void setAffiche(String affiche) {
         Affiche = affiche;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Film film = (Film) o;
+        return Objects.equals(Titre, film.Titre);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(Titre);
     }
 
     @Override

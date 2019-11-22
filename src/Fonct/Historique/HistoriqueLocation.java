@@ -60,10 +60,8 @@ public class HistoriqueLocation {
 
     @Override
     public String toString() {
-        return  "date='" + date + '\'' +
-                ", titreFilm='" + titreFilm + '\'' +
-                ", realisateur='" + realisateur + '\'' +
-                ", prixLocation=" + prixLocation +
-                ", typeDaction='" + typeDaction;
+        return  "Date:" + date + ' ' +
+                ", Titre:" + titreFilm + ' ' +
+                ", Etat:" + typeDaction;
     }
 }

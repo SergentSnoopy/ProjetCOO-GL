@@ -44,9 +44,10 @@ public class Client extends Personne {
             if (titre.equals(getListefilm().get(i).getTitre())) {
                 if(realisateur.equals(getListefilm().get(i).getRealisateur())) {
                     System.out.println(getListefilm().get(i).getNbDispo());
-                    if(getListefilm().get(i).getNbDispo()>0){
+                    if(getListefilm().get(i).getNbDispo()>0 && this.getSoldeActuel()> (estAbonne ? 4:5)){
                         historique.addLocation(titre,realisateur,estAbonne);
                         getListefilm().get(i).louerUnFilm();
+                        this.setSoldeActuel(this.getSoldeActuel()-(estAbonne ? 4:5));
                         break;
                     }
                 }
@@ -86,6 +87,16 @@ public class Client extends Personne {
     public void rechargerCompte(String numCarte,int montant){
         soldeActuel=soldeActuel+montant;
         historique.addBancaire(numCarte,montant);
+    }
+
+    public boolean devenirVip(){
+        if (this.getSoldeActuel()>=25)
+        {
+            this.setEstAbonne(true);
+            this.setSoldeActuel(this.getSoldeActuel()-25);
+            return true;
+        }
+        else return false;
     }
 
     public void demanderFilm(String titre, String realisateur){

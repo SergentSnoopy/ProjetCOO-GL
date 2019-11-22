@@ -75,10 +75,15 @@ public class HistoriqueController extends  Controller implements Initializable {
 
                 if (newValue.equals("Location"))
                 {
-
-                    for(HistoriqueLocation h : hist.voirHistLocation()) {
-                        System.out.println("plop");
-                        System.out.println(h);
+                    lhist.getItems().clear();
+                    for(HistoriqueLocation h : cl.getHistorique().getListeHistLocation()) {
+                        lhist.getItems().add(h.toString());
+                    }
+                }
+                else if (newValue.equals("Bancaire"))
+                {
+                    lhist.getItems().clear();
+                    for(HistoriqueBancaire h : cl.getHistorique().getListeHistBancaire()) {
                         lhist.getItems().add(h.toString());
                     }
                 }

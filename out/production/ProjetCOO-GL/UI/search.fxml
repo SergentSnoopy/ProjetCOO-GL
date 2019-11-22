@@ -20,7 +20,8 @@
       <Label fx:id="titre" layoutX="345.0" layoutY="47.0" minHeight="17" minWidth="247" textAlignment="CENTER" />
 
       <ImageView fx:id="aff" fitHeight="150.0" fitWidth="107.0" layoutX="384.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="414.0" layoutY="358.0" mnemonicParsing="false" text="Louer" onAction="#Rent"/>
+      <Button layoutX="414.0" layoutY="358.0" mnemonicParsing="false" text="Louer" onAction="#Rent" fx:id="rent"/>
+      <Button layoutX="414.0" layoutY="358.0" mnemonicParsing="false" text="Demander film" onAction="#Ask" fx:id="ask" visible="false"/>
       <ImageView fx:id="logo" fitHeight="86.0" fitWidth="198.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#GoHome" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Img/logo.png" />
