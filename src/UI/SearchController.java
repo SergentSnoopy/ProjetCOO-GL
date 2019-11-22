@@ -12,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
@@ -22,7 +23,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class SearchController extends Controller implements Initializable {
+public class SearchController extends Controller {
     @FXML
     public ImageView logo;
     @FXML
@@ -35,10 +36,33 @@ public class SearchController extends Controller implements Initializable {
     public Text desc;
     @FXML
     public ImageView aff;
+    @FXML
+    public TextField ts;
 
 
     public SearchController() throws IOException {
         super();
+    }
+
+    public void setsearch(String s){
+        this.ts.setText(s);
+        this.afficheFilm(s);
+        ts.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                afficheFilm(newValue);
+            }
+
+        });
+
+        listfilm.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Film>() {
+            public void changed(ObservableValue<? extends Film> observable,
+                                Film oldValue, Film newValue) {
+                titre.setText(newValue.getTitre());
+                desc.setText(newValue.getResume());
+                aff.setImage(new Image(new File("src/Img/".replace("/",System.getProperty("file.separator"))+newValue.getAffiche()).toURI().toString()));;
+            }
+        });
     }
 
 
@@ -63,21 +87,14 @@ public class SearchController extends Controller implements Initializable {
         System.out.println(hist.voirHistLocation());
     }
 
+    public void afficheFilm(String s){
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+        listfilm.getItems().clear();
         ArrayList<Film> films = this.bdl.getFilms();
         for (Film f :  films)
         {
-            listfilm.getItems().add(f);
+            if(f.getTitre().toLowerCase().contains(ts.getText().toLowerCase()))
+                listfilm.getItems().add(f);
         }
-        listfilm.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Film>() {
-            public void changed(ObservableValue<? extends Film> observable,
-                                Film oldValue, Film newValue) {
-                titre.setText(newValue.getTitre());
-                desc.setText(newValue.getResume());
-                aff.setImage(new Image(new File("src/Img/".replace("/",System.getProperty("file.separator"))+newValue.getAffiche()).toURI().toString()));;
-            }
-        });
     }
 }

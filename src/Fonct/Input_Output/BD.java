@@ -17,7 +17,6 @@ public abstract class BD {
 		this.path = path;
 	}
 
-
 	public Infos getInfo(String path) throws FileNotFoundException, IOException{
 		try (BufferedReader br = new BufferedReader(new FileReader(this.path+"/"+path))) {
 			String line;
