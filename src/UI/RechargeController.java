@@ -41,9 +41,9 @@ public class RechargeController extends Controller {
 
 
     @FXML
-    public void GoHome(){
+    public void GoHome() {
 
-        Stage stage = (Stage)logo.getScene().getWindow();
+        Stage stage = (Stage) logo.getScene().getWindow();
         Parent root = null;
         try {
             root = FXMLLoader.load(getClass().getResource("Home.fxml"));
@@ -55,9 +55,9 @@ public class RechargeController extends Controller {
     }
 
     @FXML
-    public void GoCompte(){
+    public void GoCompte() {
 
-        Stage stage = (Stage)logo.getScene().getWindow();
+        Stage stage = (Stage) logo.getScene().getWindow();
         Parent root = null;
         try {
             root = FXMLLoader.load(getClass().getResource("compte.fxml"));
@@ -77,19 +77,18 @@ public class RechargeController extends Controller {
     @FXML
     public void Valider() throws IOException {
 
-        if (!num.getText().isEmpty() && !mont.getText().isEmpty())
-        {
-            cl.rechargerCompte(num.getText(),Integer.parseInt(mont.getText()));
+        if (!num.getText().isEmpty() && !mont.getText().isEmpty()) {
+            cl.rechargerCompte(num.getText(), Integer.parseInt(mont.getText()));
             bdd.commit();
 
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Recharger");
             alert.setHeaderText("Recharger");
-            alert.setContentText("Vous avez recharger votre carte de "+mont.getText());
+            alert.setContentText("Vous avez recharger votre carte de " + mont.getText());
             alert.showAndWait();
 
-            Stage stage = (Stage)logo.getScene().getWindow();
+            Stage stage = (Stage) logo.getScene().getWindow();
             Parent root = null;
             try {
                 root = FXMLLoader.load(getClass().getResource("compte.fxml"));

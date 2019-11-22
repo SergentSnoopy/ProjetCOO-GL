@@ -1,7 +1,5 @@
 package Fonct.Historique;
 
-import java.util.Date;
-
 public class HistoriqueLocation {
 
     private String date;
@@ -9,6 +7,14 @@ public class HistoriqueLocation {
     private String realisateur;
     private int prixLocation;
     private String typeDaction;
+
+    public HistoriqueLocation(String date, String titreFilm, String realisateur, int prixLocation, String typeDaction) {
+        this.date = date;
+        this.titreFilm = titreFilm;
+        this.realisateur = realisateur;
+        this.prixLocation = prixLocation;
+        this.typeDaction = typeDaction;
+    }
 
     public String getDate() {
         return date;
@@ -50,17 +56,9 @@ public class HistoriqueLocation {
         this.typeDaction = typeDaction;
     }
 
-    public HistoriqueLocation(String date, String titreFilm, String realisateur, int prixLocation, String typeDaction){
-        this.date=date;
-        this.titreFilm=titreFilm;
-        this.realisateur=realisateur;
-        this.prixLocation=prixLocation;
-        this.typeDaction=typeDaction;
-    }
-
     @Override
     public String toString() {
-        return  "Date:" + date + ' ' +
+        return "Date:" + date + ' ' +
                 ", Titre:" + titreFilm + ' ' +
                 ", Etat:" + typeDaction;
     }

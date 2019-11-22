@@ -14,8 +14,8 @@ public class Machine {
     }
 
     public void chargeBD() throws IOException {
-        BD_Locale bd=new BD_Locale(System.getProperty("user.dir")+"/src/BDD/BDlocale");
-        listefilm=bd.getFilms();
+        BD_Locale bd = new BD_Locale(System.getProperty("user.dir") + "/src/BDD/BDlocale");
+        listefilm = bd.getFilms();
     }
 }
 
