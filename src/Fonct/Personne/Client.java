@@ -76,10 +76,10 @@ public class Client extends Personne {
         } else return false;
     }
 
-    public void demanderFilm(String titre, String realisateur) {
-        //TODO
-        //remplir
-    }
+//    public void demanderFilm(Film movie) {
+//        bdd.askFilm(movie.getTitre(), movie.getRealisateur());
+//
+//    }
 
     public String getNom() {
         return nom;
