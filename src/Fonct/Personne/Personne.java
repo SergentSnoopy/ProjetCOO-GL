@@ -1,21 +1,21 @@
 package Fonct.Personne;
 
 public abstract class Personne {
-    private String numCarte;
+    private String cardNumber;
 
     public Personne() {
 
     }
 
-    public Personne(String numCarte) {
-        this.numCarte = numCarte;
+    public Personne(String cardNumber) {
+        this.cardNumber = cardNumber;
     }
 
-    public String getNumCarte() {
-        return numCarte;
+    public String getCardNumber() {
+        return cardNumber;
     }
 
-    public void setNumCarte(String numCarte) {
-        this.numCarte = numCarte;
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
     }
 }

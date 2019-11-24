@@ -7,81 +7,81 @@ import java.util.Date;
 
 public class Historique {
 
-    String numCarteUtilisateur;
-    private ArrayList<HistoriqueLocation> listeHistLocation;
-    private ArrayList<HistoriqueBancaire> listeHistBancaire;
+    String userCardNumber;
+    private ArrayList<HistoriqueLocation> rentHistList;
+    private ArrayList<HistoriqueBancaire> bankHistList;
 
-    public Historique(String numCarteUtilisateur) {
-        this.numCarteUtilisateur = numCarteUtilisateur;
-        listeHistBancaire = new ArrayList<>();
-        listeHistLocation = new ArrayList<>();
+    public Historique(String userCardNumber) {
+        this.userCardNumber = userCardNumber;
+        bankHistList = new ArrayList<>();
+        rentHistList = new ArrayList<>();
     }
 
-    public ArrayList<HistoriqueLocation> getListeHistLocation() {
-        return listeHistLocation;
+    public ArrayList<HistoriqueLocation> getRentHistList() {
+        return rentHistList;
     }
 
-    public void setListeHistLocation(ArrayList<HistoriqueLocation> listeHistLocation) {
-        this.listeHistLocation = listeHistLocation;
+    public void setRentHistList(ArrayList<HistoriqueLocation> rentHistList) {
+        this.rentHistList = rentHistList;
     }
 
-    public ArrayList<HistoriqueBancaire> getListeHistBancaire() {
-        return listeHistBancaire;
+    public ArrayList<HistoriqueBancaire> getBankHistList() {
+        return bankHistList;
     }
 
-    public void setListeHistBancaire(ArrayList<HistoriqueBancaire> listeHistBancaire) {
-        this.listeHistBancaire = listeHistBancaire;
+    public void setBankHistList(ArrayList<HistoriqueBancaire> bankHistList) {
+        this.bankHistList = bankHistList;
     }
 
-    public String getNumCarteUtilisateur() {
-        return numCarteUtilisateur;
+    public String getUserCardNumber() {
+        return userCardNumber;
     }
 
-    public void setNumCarteUtilisateur(String numCarteUtilisateur) {
-        this.numCarteUtilisateur = numCarteUtilisateur;
+    public void setUserCardNumber(String userCardNumber) {
+        this.userCardNumber = userCardNumber;
     }
 
-    public void addLocation(String titre, String realisateur, Boolean estAbonne) {
+    public void addLocation(String title, String director, Boolean isSubscribed) {
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date date = new Date();
 
-        if (estAbonne)
-            listeHistLocation.add(new HistoriqueLocation(dateFormat.format(date), titre, realisateur, 4, "Location"));
+        if (isSubscribed)
+            rentHistList.add(new HistoriqueLocation(dateFormat.format(date), title, director, 4, "Location"));
         else
-            listeHistLocation.add(new HistoriqueLocation(dateFormat.format(date), titre, realisateur, 5, "Location"));
+            rentHistList.add(new HistoriqueLocation(dateFormat.format(date), title, director, 5, "Location"));
     }
 
-    public void addBancaire(String NumCarte, int Montant) {
+    public void addBancaire(String cardNumber, int amount) {
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date date = new Date();
 
-        listeHistBancaire.add(new HistoriqueBancaire(dateFormat.format(date), Montant));
+        bankHistList.add(new HistoriqueBancaire(dateFormat.format(date), amount));
     }
 
-    public void retournerLocation(String titre, String realisateur, Boolean estAbonne) {
+    public void retournerLocation(String title, String director, Boolean isSubscribed) {
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date date = new Date();
-        if (estAbonne)
-            listeHistLocation.add(new HistoriqueLocation(dateFormat.format(date), titre, realisateur, 4, "Rendu"));
+        if (isSubscribed)
+            rentHistList.add(new HistoriqueLocation(dateFormat.format(date), title, director, 4, "Rendu"));
         else
-            listeHistLocation.add(new HistoriqueLocation(dateFormat.format(date), titre, realisateur, 5, "Rendu"));
+            rentHistList.add(new HistoriqueLocation(dateFormat.format(date), title, director, 5, "Rendu"));
     }
 
     public void voirHistBancaire() {
         String res = "";
-        for (int i = 0; i < listeHistBancaire.size(); i++) {
-            res = res + listeHistBancaire.get(i).getDate() + ";" + listeHistBancaire.get(i).getMontant() + "\n";
+        for (int i = 0; i < bankHistList.size(); i++) {
+            res = res + bankHistList.get(i).getDate() + ";" + bankHistList.get(i).getAmount() + "\n";
         }
         System.out.print(res);
     }
 
     public ArrayList<HistoriqueLocation> voirHistLocation() {
         String res = "";
-        for (int i = 0; i < listeHistLocation.size(); i++) {
-            res = res + listeHistLocation.get(i).getDate() + ";" + listeHistLocation.get(i).getTypeDaction() + ";" + listeHistLocation.get(i).getTitreFilm() + ";" + listeHistLocation.get(i).getRealisateur() + ";\n";
+        for (int i = 0; i < rentHistList.size(); i++) {
+            res = res + rentHistList.get(i).getDate() + ";" + rentHistList.get(i).getActionType() + ";" + rentHistList.get(i).getMovieTitle() + ";" + rentHistList.get(i).getDirector() + ";\n";
         }
         System.out.print(res);
 
-        return this.listeHistLocation;
+        return this.rentHistList;
     }
 }

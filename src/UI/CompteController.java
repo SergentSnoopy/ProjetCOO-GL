@@ -43,11 +43,11 @@ public class CompteController extends Controller implements Initializable {
 
     @FXML
     public void Vip() throws IOException {
-        if (!cl.getEstAbonne()) {
+        if (!cl.getIsSubscribed()) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("VIP");
             alert.setHeaderText("VIP");
-            if (cl.devenirVip()) {
+            if (cl.becomeVIP()) {
 
                 alert.setContentText("Vous etez VIP");
             } else alert.setContentText("Solde insufisant");

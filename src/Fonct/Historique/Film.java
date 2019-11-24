@@ -3,22 +3,22 @@ package Fonct.Historique;
 import java.util.Objects;
 
 public class Film {
-    private String Titre;
-    private String Realisateur;
-    private int NbDispo;
+    private String title;
+    private String director;
+    private int nbAvailable;
     private String resume;
-    private Boolean TopVente;
-    private String Affiche;
-    private Boolean nouveauté;
+    private Boolean topSale;
+    private String poster;
+    private Boolean novelty;
 
-    public Film(String titre, String Realisateur, String resume, String Affiche, int NbDispo, Boolean TopVente, Boolean nouveau) {
-        this.Titre = titre;
-        this.Realisateur = Realisateur;
+    public Film(String title, String director, String resume, String poster, int nbAvailable, Boolean topSale, Boolean novelty) {
+        this.title = title;
+        this.director = director;
         this.resume = resume;
-        this.NbDispo = NbDispo;
-        this.TopVente = TopVente;
-        this.Affiche = Affiche;
-        this.nouveauté=nouveau;
+        this.nbAvailable = nbAvailable;
+        this.topSale = topSale;
+        this.poster = poster;
+        this.novelty =novelty;
     }
 
     public String getResume() {
@@ -29,52 +29,52 @@ public class Film {
         this.resume = resume;
     }
 
-    public void louerUnFilm() {
-        NbDispo--;
+    public void rentMovie() {
+        nbAvailable--;
     }
 
-    public void rendreUnFilm() {
-        NbDispo++;
+    public void returnMovie() {
+        nbAvailable++;
     }
 
-    public String getTitre() {
-        return Titre;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTitre(String titre) {
-        Titre = titre;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getRealisateur() {
-        return Realisateur;
+    public String getDirector() {
+        return director;
     }
 
-    public void setRealisateur(String realisateur) {
-        Realisateur = realisateur;
+    public void setDirector(String director) {
+        this.director = director;
     }
 
-    public int getNbDispo() {
-        return NbDispo;
+    public int getNbAvailable() {
+        return nbAvailable;
     }
 
-    public void setNbDispo(int nbDispo) {
-        NbDispo = nbDispo;
+    public void setNbAvailable(int nbAvailable) {
+        this.nbAvailable = nbAvailable;
     }
 
-    public Boolean getTopVente() {
-        return TopVente;
+    public Boolean getTopSale() {
+        return topSale;
     }
 
-    public void setTopVente(Boolean topVente) {
-        TopVente = topVente;
+    public void setTopSale(Boolean topSale) {
+        this.topSale = topSale;
     }
 
-    public String getAffiche() {
-        return Affiche;
+    public String getPoster() {
+        return poster;
     }
 
-    public void setAffiche(String affiche) {
-        Affiche = affiche;
+    public void setPoster(String poster) {
+        this.poster = poster;
     }
 
     @Override
@@ -82,24 +82,24 @@ public class Film {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Film film = (Film) o;
-        return Objects.equals(Titre, film.Titre);
+        return Objects.equals(title, film.title);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(Titre);
+        return Objects.hash(title);
     }
 
     @Override
     public String toString() {
-        return Titre;
+        return title;
     }
 
-    public Boolean getNouveauté() {
-        return nouveauté;
+    public Boolean getNovelty() {
+        return novelty;
     }
 
-    public void setNouveauté(Boolean nouveauté) {
-        this.nouveauté = nouveauté;
+    public void setNovelty(Boolean novelty) {
+        this.novelty = novelty;
     }
 }

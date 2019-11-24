@@ -1,33 +1,33 @@
 package Fonct.Historique;
 
 public class HistoriqueBancaire {
-    private String Date;
-    private int Montant;
+    private String date;
+    private int amount;
 
-    public HistoriqueBancaire(String Date, int Montant) {
-        this.Date = Date;
-        this.Montant = Montant;
+    public HistoriqueBancaire(String Date, int amount) {
+        this.date = Date;
+        this.amount = amount;
     }
 
     public String getDate() {
-        return Date;
+        return date;
     }
 
     public void setDate(String date) {
-        Date = date;
+        this.date = date;
     }
 
-    public int getMontant() {
-        return Montant;
+    public int getAmount() {
+        return amount;
     }
 
-    public void setMontant(int montant) {
-        Montant = montant;
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 
     @Override
     public String toString() {
-        return "Date:" + Date + ' ' +
-                ", Montant:" + Montant + "E";
+        return "Date:" + date + ' ' +
+                ", Montant:" + amount + "E";
     }
 }

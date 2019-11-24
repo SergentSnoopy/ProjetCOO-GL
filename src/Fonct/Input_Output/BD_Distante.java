@@ -33,7 +33,7 @@ public class BD_Distante extends BD {
 
     private Historique findClientHist(String idUser) {
         for (int i = 0; i < historiques.size(); i++)
-            if (historiques.get(i).getNumCarteUtilisateur().equals(idUser))
+            if (historiques.get(i).getUserCardNumber().equals(idUser))
                 return historiques.get(i);
         return null;
     }
@@ -47,10 +47,10 @@ public class BD_Distante extends BD {
                     , Integer.parseInt(info.get(2)));
             Historique hist = findClientHist(info.get(0));
             if (hist != null)
-                hist.getListeHistBancaire().add(hB);
+                hist.getBankHistList().add(hB);
             else {
                 hist = new Historique(info.get(0));
-                hist.getListeHistBancaire().add(hB);
+                hist.getBankHistList().add(hB);
                 this.historiques.add(hist);
             }
         }
@@ -62,10 +62,10 @@ public class BD_Distante extends BD {
                     , Integer.parseInt(info.get(4)), info.get(5));
             Historique hist = findClientHist(info.get(0));
             if (hist != null)
-                hist.getListeHistLocation().add(hB);
+                hist.getRentHistList().add(hB);
             else {
                 hist = new Historique(info.get(0));
-                hist.getListeHistLocation().add(hB);
+                hist.getRentHistList().add(hB);
                 historiques.add(hist);
             }
         }
@@ -113,7 +113,7 @@ public class BD_Distante extends BD {
         int i = 0;
         while (!found && films.size() > i) {
             Film f = films.get(i);
-            if (f.getTitre().equals(titre) && f.getRealisateur().equals(realisateur))
+            if (f.getTitle().equals(titre) && f.getDirector().equals(realisateur))
                 found = true;
             i++;
         }
@@ -133,21 +133,21 @@ public class BD_Distante extends BD {
 
     public Client identification(String numCarte) {
         for (Client c : clients)
-            if (c.getNumCarte().equals(numCarte))
+            if (c.getCardNumber().equals(numCarte))
                 return c;
         return null;
     }
 
     public Technicien identificationTechnicien(String numCarte) {
         for (Technicien t : techniciens)
-            if (t.getNumCarte().equals(numCarte))
+            if (t.getCardNumber().equals(numCarte))
                 return t;
         return null;
     }
 
     public Boolean supprimerClient(Client c) {
         for (int i = 0; i < clients.size(); i++) {
-            if (c.getNumCarte().equals(clients.get(i).getNumCarte())) {
+            if (c.getCardNumber().equals(clients.get(i).getCardNumber())) {
                 clients.remove(i);
                 return true;
             }
@@ -156,7 +156,7 @@ public class BD_Distante extends BD {
     }
 
     public Boolean addClient(Client c) {
-        if (this.identification(c.getNumCarte()) != null)
+        if (this.identification(c.getCardNumber()) != null)
             return false;
         clients.add(c);
         return true;
@@ -166,7 +166,7 @@ public class BD_Distante extends BD {
         // reconstruction des historiques
         ArrayList<Historique> newHistoriques = new ArrayList<Historique>();
         for (Client c : clients)
-            newHistoriques.add(c.getHistorique());
+            newHistoriques.add(c.getHistoric());
         historiques = newHistoriques;
         write();
     }
@@ -176,47 +176,47 @@ public class BD_Distante extends BD {
         ArrayList<HBWrapper> hbs = new ArrayList<HBWrapper>();
         ArrayList<HLWrapper> hls = new ArrayList<HLWrapper>();
         for (Historique h : historiques) {
-            for (HistoriqueBancaire hb : h.getListeHistBancaire())
-                hbs.add(new HBWrapper(hb, h.getNumCarteUtilisateur()));
-            for (HistoriqueLocation hl : h.getListeHistLocation())
-                hls.add(new HLWrapper(hl, h.getNumCarteUtilisateur()));
+            for (HistoriqueBancaire hb : h.getBankHistList())
+                hbs.add(new HBWrapper(hb, h.getUserCardNumber()));
+            for (HistoriqueLocation hl : h.getRentHistList())
+                hls.add(new HLWrapper(hl, h.getUserCardNumber()));
         }
 
         // historique bancaire
         super.write("HistoriqueBancaire.txt", new Infos.Writable<HBWrapper>(hbs) {
             public String parse(HBWrapper hb) {
                 return hb.numCarte + ";" + hb.hb.getDate() + ";"
-                        + hb.hb.getMontant();
+                        + hb.hb.getAmount();
             }
         });// historique locations
         super.write("HistoriqueLocations.txt", new Infos.Writable<HLWrapper>(hls) {
             public String parse(HLWrapper hl) {
-                return hl.numCarte + ";" + hl.hl.getDate() + ";" + hl.hl.getTitreFilm() +
-                        ";" + hl.hl.getRealisateur() + ";" + hl.hl.getPrixLocation() + ";" +
-                        hl.hl.getTitreFilm();
+                return hl.numCarte + ";" + hl.hl.getDate() + ";" + hl.hl.getMovieTitle() +
+                        ";" + hl.hl.getDirector() + ";" + hl.hl.getLocationPrice() + ";" +
+                        hl.hl.getMovieTitle();
             }
         });
 
         // Clients
         super.write("Clients.txt", new Infos.Writable<Client>(clients) {
             public String parse(Client c) {
-                return c.getNumCarte() + ";" + c.getNom() + ";" + c.getPrenom() + ";" + c.getAdresse() +
-                        ";" + c.getEstAbonne() + ";" + c.getSoldeActuel();
+                return c.getCardNumber() + ";" + c.getName() + ";" + c.getFirstName() + ";" + c.getAddress() +
+                        ";" + c.getIsSubscribed() + ";" + c.getCurrentBalance();
             }
         });
 
         // Techniciens
         super.write("Techniciens.txt", new Infos.Writable<Technicien>(techniciens) {
             public String parse(Technicien c) {
-                return c.getNumCarte();
+                return c.getCardNumber();
             }
         });
 
         // Films
         super.write("Films.txt", new Infos.Writable<Film>(films) {
             public String parse(Film f) {
-                return f.getTitre() + ";" + f.getRealisateur() + ";" + f.getResume() + ";" +
-                        f.getAffiche() + ";" + f.getNbDispo();
+                return f.getTitle() + ";" + f.getDirector() + ";" + f.getResume() + ";" +
+                        f.getPoster() + ";" + f.getNbAvailable();
             }
         });
 

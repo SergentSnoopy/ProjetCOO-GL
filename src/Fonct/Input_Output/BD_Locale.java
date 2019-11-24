@@ -23,7 +23,7 @@ public class BD_Locale extends BD {
 
     private FilmWrapper findFilmWithKeys(String titre, String realisateur) {
         for (FilmWrapper fw : this.films)
-            if (fw.film.getTitre().equals(titre) && fw.film.getRealisateur().equals(realisateur))
+            if (fw.film.getTitle().equals(titre) && fw.film.getDirector().equals(realisateur))
                 return fw;
         return null;
     }
@@ -36,7 +36,7 @@ public class BD_Locale extends BD {
     }
 
     public int getLoc(Film f) {
-        FilmWrapper fw = this.findFilmWithKeys(f.getTitre(), f.getRealisateur());
+        FilmWrapper fw = this.findFilmWithKeys(f.getTitle(), f.getDirector());
         if (fw != null)
             return fw.nbLoc;
         return -1;
@@ -48,9 +48,9 @@ public class BD_Locale extends BD {
         // si on a des films qui ne sont plus dispos (suppr par un tech) on les supprime
         ArrayList<FilmWrapper> newFilms = new ArrayList<FilmWrapper>();
         for (Film film : films) {
-            FilmWrapper fw = this.findFilmWithKeys(film.getTitre(), film.getRealisateur());
+            FilmWrapper fw = this.findFilmWithKeys(film.getTitle(), film.getDirector());
             if (fw != null) {
-                int n = film.getNbDispo() - fw.nbLoc;
+                int n = film.getNbAvailable() - fw.nbLoc;
                 fw.nbLoc = (n > 0) ? fw.nbLoc + n : fw.nbLoc;
             } else
                 fw = new FilmWrapper(film, 0);
@@ -64,8 +64,8 @@ public class BD_Locale extends BD {
         super.write("film.txt", new Infos.Writable<FilmWrapper>(this.films) {
             public String parse(FilmWrapper fw) {
                 Film f = fw.film;
-                return f.getTitre() + ";" + f.getRealisateur() + ";" + f.getResume() + ";" + f.getAffiche() + ";" + f.getNbDispo()
-                        + ";" + f.getTopVente() + ";" + fw.nbLoc;
+                return f.getTitle() + ";" + f.getDirector() + ";" + f.getResume() + ";" + f.getPoster() + ";" + f.getNbAvailable()
+                        + ";" + f.getTopSale() + ";" + fw.nbLoc;
             }
         });
     }

@@ -82,8 +82,8 @@ public class ControllerHome extends Controller implements Initializable {
         ArrayList<Film> films = this.bdl.getFilms();
         int i = 0;
         for (Film f : films) {
-            if (f.getTopVente() && i < lt.size()) {
-                lt.get(i).setImage(new Image(new File("src/Img/".replace("/", System.getProperty("file.separator")) + f.getAffiche()).toURI().toString()));
+            if (f.getTopSale() && i < lt.size()) {
+                lt.get(i).setImage(new Image(new File("src/Img/".replace("/", System.getProperty("file.separator")) + f.getPoster()).toURI().toString()));
                 i++;
 
             }

@@ -78,7 +78,7 @@ public class RechargeController extends Controller {
     public void Valider() throws IOException {
 
         if (!num.getText().isEmpty() && !mont.getText().isEmpty()) {
-            cl.rechargerCompte(num.getText(), Integer.parseInt(mont.getText()));
+            cl.rechargeAccount(num.getText(), Integer.parseInt(mont.getText()));
             bdd.commit();
 
 

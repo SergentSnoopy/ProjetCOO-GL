@@ -62,9 +62,9 @@ public class SearchController extends Controller {
             public void changed(ObservableValue<? extends Film> observable,
                                 Film oldValue, Film newValue) {
                 if (newValue != null) {
-                    titre.setText(newValue.getTitre());
+                    titre.setText(newValue.getTitle());
                     desc.setText(newValue.getResume());
-                    aff.setImage(new Image(new File("src/Img/".replace("/", System.getProperty("file.separator")) + newValue.getAffiche()).toURI().toString()));
+                    aff.setImage(new Image(new File("src/Img/".replace("/", System.getProperty("file.separator")) + newValue.getPoster()).toURI().toString()));
                     if (bdl.getLoc(newValue) != -1) {
                         ask.setVisible(false);
                         rent.setVisible(true);
@@ -102,14 +102,14 @@ public class SearchController extends Controller {
     @FXML
     public void Rent() throws IOException {
 
-        cl.louerFilm(((Film) listfilm.getSelectionModel().getSelectedItem()));
+        cl.rentMovie(((Film) listfilm.getSelectionModel().getSelectedItem()));
         bdd.commit();
     }
 
     @FXML
     public void Ask() throws IOException {
 
-        bdd.askFilm(((Film) listfilm.getSelectionModel().getSelectedItem()).getTitre(),((Film) listfilm.getSelectionModel().getSelectedItem()).getRealisateur());
+        bdd.askFilm(((Film) listfilm.getSelectionModel().getSelectedItem()).getTitle(),((Film) listfilm.getSelectionModel().getSelectedItem()).getDirector());
         bdd.commit();
     }
 
@@ -118,18 +118,18 @@ public class SearchController extends Controller {
         listfilm.getItems().clear();
         ArrayList<Film> films = this.bdl.getFilms();
         for (Film f : films) {
-            if (f.getTitre().toLowerCase().contains(ts.getText().toLowerCase()))
+            if (f.getTitle().toLowerCase().contains(ts.getText().toLowerCase()))
                 listfilm.getItems().add(f);
         }
         films = this.bdd.getFilms();
         for (Film f : films) {
             if (!listfilm.getItems().contains(f))
-                if (f.getTitre().toLowerCase().contains(ts.getText().toLowerCase()))
+                if (f.getTitle().toLowerCase().contains(ts.getText().toLowerCase()))
                     listfilm.getItems().add(f);
         }
         listfilm.getItems().sort((o1, o2) -> {
             if (o1.equals(o2)) return 0;
-            return ((Film) o1).getTitre().compareTo(((Film) o2).getTitre());
+            return ((Film) o1).getTitle().compareTo(((Film) o2).getTitle());
         });
 
     }
