@@ -8,7 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -31,6 +31,8 @@ public class ControllerHome extends Controller implements Initializable {
     public ImageView top2;
     @FXML
     public ImageView top3;
+    @FXML
+    public TextField textsearch;
 
 
     public ControllerHome() throws IOException {
@@ -38,12 +40,12 @@ public class ControllerHome extends Controller implements Initializable {
     }
 
     @FXML
-    public void Comptebutton(ActionEvent event){
+    public void Comptebutton(ActionEvent event) {
 
-        Stage stage = (Stage)compte.getScene().getWindow();
+        Stage stage = (Stage) compte.getScene().getWindow();
         Parent root = null;
         try {
-            root = FXMLLoader.load(getClass().getResource("Compte.fxml"));
+            root = FXMLLoader.load(getClass().getResource("compte.fxml"));
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -53,12 +55,16 @@ public class ControllerHome extends Controller implements Initializable {
 
 
     @FXML
-    public void GoSearch(){
+    public void GoSearch() {
 
-        Stage stage = (Stage)search.getScene().getWindow();
+        Stage stage = (Stage) search.getScene().getWindow();
         Parent root = null;
         try {
-            root = FXMLLoader.load(getClass().getResource("search.fxml"));
+            FXMLLoader fx = new FXMLLoader(getClass().getResource("search.fxml"));
+            root = fx.load();
+            SearchController sc = fx.getController();
+            sc.setsearch(textsearch.getText());
+            fx.setController(sc);
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -74,18 +80,15 @@ public class ControllerHome extends Controller implements Initializable {
         lt.add(top2);
         lt.add(top3);
         ArrayList<Film> films = this.bdl.getFilms();
-        int i=0;
-        for (Film f :  films)
-        {
-            if (f.getTopVente()&& i<lt.size())
-            {
-                lt.get(i).setImage(new Image(new File("src/Img/".replace("/",System.getProperty("file.separator"))+f.getAffiche()).toURI().toString()));
+        int i = 0;
+        for (Film f : films) {
+            if (f.getTopVente() && i < lt.size()) {
+                lt.get(i).setImage(new Image(new File("src/Img/".replace("/", System.getProperty("file.separator")) + f.getAffiche()).toURI().toString()));
                 i++;
 
             }
 
         }
-
 
 
     }

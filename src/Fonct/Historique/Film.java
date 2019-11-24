@@ -1,5 +1,7 @@
 package Fonct.Historique;
 
+import java.util.Objects;
+
 public class Film {
     private String Titre;
     private String Realisateur;
@@ -8,13 +10,13 @@ public class Film {
     private Boolean TopVente;
     private String Affiche;
 
-    public Film(String titre, String Realisateur,String resume, String Affiche, int NbDispo, Boolean TopVente){
-        this.Titre=titre;
-        this.Realisateur=Realisateur;
-        this.resume=resume;
-        this.NbDispo=NbDispo;
-        this.TopVente=TopVente;
-        this.Affiche=Affiche;
+    public Film(String titre, String Realisateur, String resume, String Affiche, int NbDispo, Boolean TopVente) {
+        this.Titre = titre;
+        this.Realisateur = Realisateur;
+        this.resume = resume;
+        this.NbDispo = NbDispo;
+        this.TopVente = TopVente;
+        this.Affiche = Affiche;
     }
 
     public String getResume() {
@@ -25,11 +27,11 @@ public class Film {
         this.resume = resume;
     }
 
-    public void louerUnFilm(){
+    public void louerUnFilm() {
         NbDispo--;
     }
 
-    public void rendreUnFilm(){
+    public void rendreUnFilm() {
         NbDispo++;
     }
 
@@ -71,6 +73,19 @@ public class Film {
 
     public void setAffiche(String affiche) {
         Affiche = affiche;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Film film = (Film) o;
+        return Objects.equals(Titre, film.Titre);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(Titre);
     }
 
     @Override

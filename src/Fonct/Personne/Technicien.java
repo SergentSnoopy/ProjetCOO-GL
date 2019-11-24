@@ -8,19 +8,19 @@ public class Technicien extends Personne {
         super(numCarte);
     }
 
-    public void ajoutNouveaute(){
+    public void ajoutNouveaute() {
 
     }
 
-    public void afficherStatistique(){
+    public void afficherStatistique() {
 
     }
 
-    public void majDB(){
+    public void majDB() {
 
     }
 
-    public void majTopFilm(){
+    public void majTopFilm() {
 
     }
 }
