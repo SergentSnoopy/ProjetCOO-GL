@@ -58,7 +58,7 @@ public class Historique {
         listeHistBancaire.add(new HistoriqueBancaire(dateFormat.format(date), Montant));
     }
 
-    public void retournerLocation(String titre, String realisateur, Boolean estAbonne, ArrayList<Film> listeFilm) {
+    public void retournerLocation(String titre, String realisateur, Boolean estAbonne) {
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date date = new Date();
         if (estAbonne)

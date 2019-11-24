@@ -1,8 +1,6 @@
 package Fonct.Personne;
 
-import Fonct.Machine;
-
-public abstract class Personne extends Machine {
+public abstract class Personne {
     private String numCarte;
 
     public Personne() {

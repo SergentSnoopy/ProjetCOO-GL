@@ -22,20 +22,18 @@ public class Client extends Personne {
         this.estAbonne = estAbonne;
         this.soldeActuel = soldeActuel;
         this.historique = historique;
-        chargeBD();
     }
 
-    public Client(String nom, String prenom, String adresse) throws IOException {
-        setNumCarte("" + ((int) (Math.random() * 1000000 + 1000000)));
-
-        this.nom = nom;
-        this.prenom = prenom;
-        this.adresse = adresse;
-        this.estAbonne = false;
-        this.soldeActuel = 0;
-        this.historique = new Historique(getNumCarte());
-        chargeBD();
-    }
+//    public Client(String nom, String prenom, String adresse) throws IOException {
+//        setNumCarte("" + ((int) (Math.random() * 1000000 + 1000000)));
+//
+//        this.nom = nom;
+//        this.prenom = prenom;
+//        this.adresse = adresse;
+//        this.estAbonne = false;
+//        this.soldeActuel = 0;
+//        this.historique = new Historique(getNumCarte());
+//    }
 
     public void louerFilm(Film movie) {
         historique.addLocation(movie.getTitre(), movie.getRealisateur(), estAbonne);
@@ -44,7 +42,7 @@ public class Client extends Personne {
     }
 
     public void rendreFilm(Film movie) {
-        historique.retournerLocation(movie.getTitre(), movie.getRealisateur(), estAbonne, getListefilm());
+        historique.retournerLocation(movie.getTitre(), movie.getRealisateur(), estAbonne);
         //ajouter un film dispo
     }
 
