@@ -1,2 +1,3 @@
 8547;2019/11/22 13:42:04;Terminator;James Cameron;4;Terminator
 8547;2019/11/22 14:22:44;Predator;Johon McTiernan;4;Predator
+8547;2019/11/24 15:34:27;Crocodile Fury;Ted Kingsbrook;5;Crocodile Fury

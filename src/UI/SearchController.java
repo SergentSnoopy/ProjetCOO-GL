@@ -102,15 +102,15 @@ public class SearchController extends Controller {
     @FXML
     public void Rent() throws IOException {
 
-        cl.louerFilm(((Film) listfilm.getSelectionModel().getSelectedItem()).getTitre(), ((Film) listfilm.getSelectionModel().getSelectedItem()).getRealisateur());
+        cl.louerFilm(((Film) listfilm.getSelectionModel().getSelectedItem()));
         bdd.commit();
     }
 
     @FXML
     public void Ask() throws IOException {
 
-        cl.demanderFilm(((Film) listfilm.getSelectionModel().getSelectedItem()).getTitre(), ((Film) listfilm.getSelectionModel().getSelectedItem()).getRealisateur());
-        bdd.commit();
+        //cl.demanderFilm(((Film) listfilm.getSelectionModel().getSelectedItem()));
+        //bdd.commit();
     }
 
     public void afficheFilm(String s) {

@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class test {
     public static void main(String[] args) throws IOException, InterruptedException {
-
+        /*
         Client c = new Client("Sollier", "Mathieu", "gare");
         System.out.println(c.getNumCarte());
         c.rechargerCompte("01234", 200);
@@ -23,6 +23,6 @@ public class test {
         c.voirHistorique();
         System.out.println(c.getListefilm().get(0).getNbDispo());
 
-
+*/
     }
 }
