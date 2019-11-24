@@ -1,5 +1,6 @@
 package Fonct.Personne;
 
+import Fonct.Historique.Film;
 import Fonct.Historique.Historique;
 
 import java.io.IOException;
@@ -36,33 +37,15 @@ public class Client extends Personne {
         chargeBD();
     }
 
-    public void louerFilm(String titre, String realisateur) {
-        for (int i = 0; i < getListefilm().size(); i++) {
-            if (titre.equals(getListefilm().get(i).getTitre())) {
-                if (realisateur.equals(getListefilm().get(i).getRealisateur())) {
-                    System.out.println(getListefilm().get(i).getNbDispo());
-                    if (getListefilm().get(i).getNbDispo() > 0 && this.getSoldeActuel() > (estAbonne ? 4 : 5)) {
-                        historique.addLocation(titre, realisateur, estAbonne);
-                        getListefilm().get(i).louerUnFilm();
-                        this.setSoldeActuel(this.getSoldeActuel() - (estAbonne ? 4 : 5));
-                        break;
-                    }
-                }
-            }
-        }
+    public void louerFilm(Film movie) {
+        historique.addLocation(movie.getTitre(), movie.getRealisateur(), estAbonne);
+        this.setSoldeActuel(this.getSoldeActuel() - (estAbonne ? 4 : 5));
+        //retirer un film
     }
 
-    public void rendreFilm(String titre, String realisateur) {
-
-        for (int i = 0; i < getListefilm().size(); i++) {
-            if (titre.equals(getListefilm().get(i).getTitre())) {
-                if (realisateur.equals(getListefilm().get(i).getRealisateur())) {
-                    historique.retournerLocation(titre, realisateur, estAbonne, getListefilm());
-                    getListefilm().get(i).rendreUnFilm();
-                    break;
-                }
-            }
-        }
+    public void rendreFilm(Film movie) {
+        historique.retournerLocation(movie.getTitre(), movie.getRealisateur(), estAbonne, getListefilm());
+        //ajouter un film dispo
     }
 
     public void voirHistorique() {
