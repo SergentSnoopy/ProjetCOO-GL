@@ -7,6 +7,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Test {
+    /*
+        Test de base sur le bon fonctionnement de la BD
+    */
     public static void main(String args[]) {
         try {
             BD_Locale bdl = new BD_Locale("BDlocale");
@@ -16,17 +19,16 @@ public class Test {
             Client client = bdd.identification("7325");
 
             for (Film f : films)
-                System.out.println(f.getTitle());
+                System.out.println(f.getTitre());
             if (client != null) {
-                System.out.println(client.getName());
-                System.out.println(client.getHistoric().getBankHistList().size());
-                client.setCurrentBalance(5);
+                System.out.println(client.getNom());
+                System.out.println(client.getHistorique().getListeHistBancaire().size());
+                client.setSoldeActuel(5);
             } else
                 System.out.println("client not found");
             bdl.commit(films);
             bdd.commit();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }

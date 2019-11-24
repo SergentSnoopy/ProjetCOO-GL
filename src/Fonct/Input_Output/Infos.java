@@ -3,17 +3,8 @@ package Fonct.Input_Output;
 import java.util.ArrayList;
 
 public class Infos extends ArrayList<ArrayList<String>> {
-//	public static interface Writable<T>{
-//		public String parse(T e);
-//		public default ArrayList<String> toList(ArrayList<T> l){
-//			ArrayList<String> out = new ArrayList<String>();
-//			for(T e : l)
-//				out.add(this.parse(e));
-//			return out;
-//		}
-//	}
 
-    public static abstract class Writable<T> {
+    public static abstract class Writable<T> {//transforme une liste d'objets en chaine de caractères pour écriture dans un fichier
         private ArrayList<T> list;
 
         public Writable(ArrayList<T> l) {

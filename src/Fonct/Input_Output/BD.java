@@ -18,6 +18,8 @@ public abstract class BD {
         this.path = path;
     }
 
+    // getInfo permet de charger les données d'un fichier csv dans une liste 
+
     public Infos getInfo(String path) throws FileNotFoundException, IOException {
         try (BufferedReader br = new BufferedReader(new FileReader(this.path + "/" + path))) {
             String line;
@@ -38,3 +40,45 @@ public abstract class BD {
         Files.write(Paths.get(this.path + "/" + path), w.getData(), option);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
