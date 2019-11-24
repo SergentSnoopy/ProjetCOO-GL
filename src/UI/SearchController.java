@@ -109,8 +109,8 @@ public class SearchController extends Controller {
     @FXML
     public void Ask() throws IOException {
 
-        //cl.demanderFilm(((Film) listfilm.getSelectionModel().getSelectedItem()));
-        //bdd.commit();
+        bdd.askFilm(((Film) listfilm.getSelectionModel().getSelectedItem()).getTitre(),((Film) listfilm.getSelectionModel().getSelectedItem()).getRealisateur());
+        bdd.commit();
     }
 
     public void afficheFilm(String s) {
