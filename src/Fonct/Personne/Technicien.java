@@ -1,5 +1,7 @@
 package Fonct.Personne;
 
+import Fonct.Historique.Film;
+
 import java.io.IOException;
 
 public class Technicien extends Personne {
@@ -8,20 +10,20 @@ public class Technicien extends Personne {
         super(numCarte);
     }
 
-    public void ajoutNouveaute() {
-
-    }
-
-    public void afficherStatistique() {
-
-    }
-
-    public void majDB() {
-
-    }
-
-    public void majTopFilm() {
-
-    }
+//    public void ajoutNouveaute(Film movie) {
+//        movie.setNovelty(true);
+//    }
+//
+//    public void afficherStatistique() {
+//
+//    }
+//
+//    public void majDB() {
+//
+//    }
+//
+//    public void majTopFilm() {
+//
+//    }
 
 }
