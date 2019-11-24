@@ -19,11 +19,11 @@ public class Test {
             Client client = bdd.identification("7325");
 
             for (Film f : films)
-                System.out.println(f.getTitre());
+                System.out.println(f.getTitle());
             if (client != null) {
-                System.out.println(client.getNom());
-                System.out.println(client.getHistorique().getListeHistBancaire().size());
-                client.setSoldeActuel(5);
+                System.out.println(client.getName());
+                System.out.println(client.getHistoric().getBankHistList().size());
+                client.setCurrentBalance(5);
             } else
                 System.out.println("client not found");
             bdl.commit(films);
