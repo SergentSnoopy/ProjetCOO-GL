@@ -9,14 +9,16 @@ public class Film {
     private String resume;
     private Boolean TopVente;
     private String Affiche;
+    private Boolean nouveauté;
 
-    public Film(String titre, String Realisateur, String resume, String Affiche, int NbDispo, Boolean TopVente) {
+    public Film(String titre, String Realisateur, String resume, String Affiche, int NbDispo, Boolean TopVente, Boolean nouveau) {
         this.Titre = titre;
         this.Realisateur = Realisateur;
         this.resume = resume;
         this.NbDispo = NbDispo;
         this.TopVente = TopVente;
         this.Affiche = Affiche;
+        this.nouveauté=nouveau;
     }
 
     public String getResume() {
@@ -91,5 +93,13 @@ public class Film {
     @Override
     public String toString() {
         return Titre;
+    }
+
+    public Boolean getNouveauté() {
+        return nouveauté;
+    }
+
+    public void setNouveauté(Boolean nouveauté) {
+        this.nouveauté = nouveauté;
     }
 }
