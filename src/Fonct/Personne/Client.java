@@ -53,15 +53,6 @@ public class Client extends Personne {
         historique.voirHistBancaire();
     }
 
-    public Boolean devenirPremium() {
-        if (soldeActuel < 25) {
-            return false;
-        } else {
-            soldeActuel = soldeActuel - 25;
-            estAbonne = true;
-            return true;
-        }
-    }
 
     public void rechargerCompte(String numCarte, int montant) {
         soldeActuel = soldeActuel + montant;
@@ -76,10 +67,6 @@ public class Client extends Personne {
         } else return false;
     }
 
-    public void demanderFilm(String titre, String realisateur) {
-        //TODO
-        //remplir
-    }
 
     public String getNom() {
         return nom;
