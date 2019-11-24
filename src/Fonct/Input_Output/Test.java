@@ -17,6 +17,7 @@ public class Test {
 			
 			for(Film f : films)
 				System.out.println(f.getTitre());
+
 			if(client != null) {
 				System.out.println(client.getNom());
 				System.out.println(client.getHistorique().getListeHistBancaire().size());

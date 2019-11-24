@@ -1,8 +1,7 @@
 package UI;
 
 import Fonct.Historique.Historique;
-import Fonct.Input_Output.BD_Distante;
-import Fonct.Input_Output.BD_locale;
+import Fonct.Input_Output.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,13 +17,13 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Controller  {
-    BD_locale bdl;
+    BD_Locale bdl;
     BD_Distante bdd;
     Historique hist;
 
     public Controller() throws IOException {
-        bdl=new BD_locale(System.getProperty("user.dir")+"\\src\\BDD\\BDlocale".replace("\\",System.getProperty("file.separator")));
+        bdl=new BD_Locale(System.getProperty("user.dir")+"\\src\\BDD\\BDlocale".replace("\\",System.getProperty("file.separator")));
         bdd=new BD_Distante(System.getProperty("user.dir")+"\\src\\BDD\\BDlocale".replace("\\",System.getProperty("file.separator")));
-        hist=new Historique();
+//        hist=new Historique();
     }
 }
