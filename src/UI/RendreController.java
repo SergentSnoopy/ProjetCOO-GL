@@ -12,10 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
@@ -90,6 +87,12 @@ public class RendreController extends Controller implements Initializable {
             listfilm.getItems().remove(listfilm.getSelectionModel().getSelectedItem());
             bdd.commit();
             bdl.commit(listFilm);
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Rendu");
+            alert.setHeaderText("Rendu");
+            alert.setContentText("Vous avez rendu le(s) film");
+            alert.showAndWait();
         }
     }
 
