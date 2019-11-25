@@ -41,7 +41,7 @@ public class TechController extends Controller implements Initializable {
         Stage stage = (Stage) logo.getScene().getWindow();
         Parent root = null;
         try {
-            root = FXMLLoader.load(getClass().getResource("Home.fxml"));
+            root = FXMLLoader.load(getClass().getResource("Tech.fxml"));
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -95,6 +95,5 @@ public class TechController extends Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        solde.setText(""+cl.getCurrentBalance()+"€");
     }
 }
