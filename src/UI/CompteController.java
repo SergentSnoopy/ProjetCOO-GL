@@ -64,11 +64,16 @@ public class CompteController extends Controller implements Initializable {
             alert.setTitle("VIP");
             alert.setHeaderText("VIP");
             if (cl.becomeVIP()) {
-
                 alert.setContentText("Vous etez VIP");
             } else alert.setContentText("Solde insufisant");
             alert.showAndWait();
             bdd.commit();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("VIP");
+            alert.setHeaderText("VIP");
+            alert.setContentText("Vous êtes deja VIP");
+            alert.showAndWait();
         }
     }
 

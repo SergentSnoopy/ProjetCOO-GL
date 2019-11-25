@@ -42,8 +42,8 @@ public class TechController extends Controller implements Initializable {
         for (int i = 0; i < AlFilm.size() ; i++) {
             System.out.println(" " + AlFilm.get(i).getTitle() + " - " + AlFilm.get(i).getDirector() + " - " + bdl.getLoc(AlFilm.get(i)));
         }
-        bdl.resetLoc();
-        bdl.commit(bdl.getFilms());
+
+//        bdl.commit(bdl.getFilms());
     }
 
     @FXML
