@@ -41,6 +41,11 @@ public class TechController extends Controller implements Initializable {
             System.out.println(" " + AlFilm.get(i).getTitle() + " - " + AlFilm.get(i).getDirector() + " - " + bdl.getLoc(AlFilm.get(i)));
         }
         bdl.commit(bdl.getFilms(),true);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Statistique");
+        alert.setHeaderText("Statistique");
+        alert.setContentText("Les Statistiques se trouvent sur la console");
+        alert.showAndWait();
     }
 
     @FXML
