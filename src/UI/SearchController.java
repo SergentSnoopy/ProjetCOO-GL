@@ -102,20 +102,67 @@ public class SearchController extends Controller {
         Film f = (Film)listfilm.getSelectionModel().getSelectedItem();
 
         if(f.getNbAvailable()>0) {
-            cl.rentMovie(f);
-            f.rentMovie();
-            filmlist = bdl.getFilms();
-            for(int i = 0; i < filmlist.size(); i++){
-                if(filmlist.get(i).getTitle().equals(f.getTitle()) && filmlist.get(i).getDirector().equals(f.getDirector()))
-                  filmlist.set(i,f);
-            }
-            bdd.commit();
-            bdl.commit(filmlist);
+            if(cl.getIsSubscribed()) {
+                if (cl.getCurrentBalance() >= 4) {
+                    cl.setCurrentBalance(cl.getCurrentBalance() - 4);
+                    cl.rentMovie(f);
+                    f.rentMovie();
 
+                    filmlist = bdl.getFilms();
+                    for(int i = 0; i < filmlist.size(); i++){
+                        if(filmlist.get(i).getTitle().equals(f.getTitle()) && filmlist.get(i).getDirector().equals(f.getDirector()))
+                            filmlist.set(i,f);
+                    }
+                    bdd.commit();
+                    bdl.commit(filmlist);
+
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Location");
+                    alert.setHeaderText("Location");
+                    alert.setContentText("Vous avez louer le film");
+                    alert.showAndWait();
+                }else {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Location");
+                    alert.setHeaderText("Solde Insuffisant");
+                    alert.setContentText("Veuillez recharger votre compte");
+                    alert.showAndWait();
+                }
+            }else {
+                if (cl.getCurrentBalance() >= 5) {
+                    cl.setCurrentBalance(cl.getCurrentBalance() - 5);
+                    cl.rentMovie(f);
+
+                    f.rentMovie();
+
+                    filmlist = bdl.getFilms();
+                    for(int i = 0; i < filmlist.size(); i++){
+                        if(filmlist.get(i).getTitle().equals(f.getTitle()) && filmlist.get(i).getDirector().equals(f.getDirector()))
+                            filmlist.set(i,f);
+                    }
+                    bdd.commit();
+                    bdl.commit(filmlist);
+
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Location");
+                    alert.setHeaderText("Location");
+                    alert.setContentText("Vous avez louer le film");
+                    alert.showAndWait();
+                }else {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Location");
+                    alert.setHeaderText("Solde Insuffisant");
+                    alert.setContentText("Veuillez recharger votre compte");
+                    alert.showAndWait();
+                }
+            }
+
+
+        }else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Location");
-            alert.setHeaderText("Location");
-            alert.setContentText("Vous avez louer le film");
+            alert.setHeaderText("Pas Disponible");
+            alert.setContentText("Ce film est en rupture de stock");
             alert.showAndWait();
         }
     }

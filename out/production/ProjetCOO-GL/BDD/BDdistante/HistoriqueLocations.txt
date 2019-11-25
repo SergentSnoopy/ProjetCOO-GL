@@ -24,3 +24,8 @@
 8547;Mon Nov 25 17:41:31 CET 2019;GangLand; Art Camacho;-1;Rendue
 8547;2019/11/25 17:49:42;GangLand; Art Camacho;4;Location
 8547;Mon Nov 25 17:54:20 CET 2019;GangLand; Art Camacho;-1;Rendue
+8547;2019/11/25 19:37:32;Blood Freak;Steve Hawkes;4;Location
+8547;Mon Nov 25 19:38:29 CET 2019;Blood Freak;Steve Hawkes;-1;Rendue
+8547;2019/11/25 19:45:39;Blood Freak;Steve Hawkes;4;Location
+8547;2019/11/25 19:46:52;Blood Freak;Steve Hawkes;4;Location
+8547;2019/11/25 19:46:55;Blood Freak;Steve Hawkes;4;Location

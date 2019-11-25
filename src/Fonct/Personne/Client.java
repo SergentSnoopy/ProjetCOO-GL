@@ -27,16 +27,7 @@ public class Client extends Personne {
 
     //permet de louer un film, elle prend en parametre le film souhaité
     public void rentMovie(Film movie) {
-        if(isSubscribed) {
-            if (this.currentBalance >= 4) {
-                this.currentBalance = this.currentBalance - 4;
-                historic.addLocation(movie.getTitle(), movie.getDirector(), isSubscribed);
-            }
-        }else
-            if(this.currentBalance>=5){
-                this.currentBalance=currentBalance-5;
-                historic.addLocation(movie.getTitle(), movie.getDirector(), isSubscribed);
-            }
+        historic.addLocation(movie.getTitle(), movie.getDirector(), isSubscribed);
     }
 
     //permet de retourner un film, elle prend un film en parametre

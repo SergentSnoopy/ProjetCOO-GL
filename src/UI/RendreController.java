@@ -91,7 +91,7 @@ public class RendreController extends Controller implements Initializable {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Rendu");
             alert.setHeaderText("Rendu");
-            alert.setContentText("Vous avez rendu le(s) film");
+            alert.setContentText("Vous avez rendu le film");
             alert.showAndWait();
         }
     }
