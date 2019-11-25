@@ -10,6 +10,7 @@ public class HistoriqueLocation {
     private int locationPrice;
     private String actionType;
 
+    //Constructeur de HistoriqueLocation
     public HistoriqueLocation(String date, String movieTitle, String director, int locationPrice, String actionType) {
         this.date = date;
         this.movieTitle = movieTitle;

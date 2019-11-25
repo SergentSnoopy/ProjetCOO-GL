@@ -4,6 +4,7 @@ public class HistoriqueBancaire {
     private String date;
     private int amount;
 
+    //Constructeur de HistoriqueBancaire
     public HistoriqueBancaire(String Date, int amount) {
         this.date = Date;
         this.amount = amount;
