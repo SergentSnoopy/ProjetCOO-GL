@@ -66,7 +66,7 @@ public class ControllerHome extends Controller implements Initializable {
         try {
             FXMLLoader fx = new FXMLLoader(getClass().getResource("search.fxml"));
             root = fx.load();
-            SearchController sc = fx.getController();
+            RendreController sc = fx.getController();
             sc.setsearch(textsearch.getText());
             fx.setController(sc);
         } catch (IOException ex) {

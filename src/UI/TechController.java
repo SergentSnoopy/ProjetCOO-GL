@@ -14,14 +14,14 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class CompteController extends Controller implements Initializable {
+public class TechController extends Controller implements Initializable {
 
     @FXML
     public ImageView logo;
     @FXML
     public Label solde;
 
-    public CompteController() throws IOException {
+    public TechController() throws IOException {
         super();
     }
 
@@ -32,15 +32,7 @@ public class CompteController extends Controller implements Initializable {
 
     @FXML
     public void GoRendre() {
-        Stage stage = (Stage) logo.getScene().getWindow();
-        Parent root = null;
-        try {
-            root = FXMLLoader.load(getClass().getResource("Rendre.fxml"));
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-        stage.setScene(new Scene(root, 640, 400));
-        stage.show();
+        System.out.println("Test");
     }
 
     @FXML
