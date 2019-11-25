@@ -31,6 +31,11 @@ public class CompteController extends Controller implements Initializable {
     }
 
     @FXML
+    public void GoRendre() {
+        System.out.println("Test");
+    }
+
+    @FXML
     public void GoHome() {
 
         Stage stage = (Stage) logo.getScene().getWindow();
