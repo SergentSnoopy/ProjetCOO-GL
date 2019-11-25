@@ -11,6 +11,7 @@ public class Historique {
     private ArrayList<HistoriqueLocation> rentHistList;
     private ArrayList<HistoriqueBancaire> bankHistList;
 
+    //Constructeur d'Historique
     public Historique(String userCardNumber) {
         this.userCardNumber = userCardNumber;
         bankHistList = new ArrayList<>();
@@ -41,6 +42,7 @@ public class Historique {
         this.userCardNumber = userCardNumber;
     }
 
+    //Ajout de la location dans l'historique de location en fonction du status du client (VIP?)
     public void addLocation(String title, String director, Boolean isSubscribed) {
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date date = new Date();
@@ -51,6 +53,7 @@ public class Historique {
             rentHistList.add(new HistoriqueLocation(dateFormat.format(date), title, director, 5, "Location"));
     }
 
+    //Ajout d'un rechargement bancaire dans l'historique bancaire
     public void addBancaire(String cardNumber, int amount) {
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date date = new Date();
@@ -58,6 +61,7 @@ public class Historique {
         bankHistList.add(new HistoriqueBancaire(dateFormat.format(date), amount));
     }
 
+    //ajout d'un retour de location dans l'historique de location
     public void retournerLocation(String title, String director, Boolean isSubscribed) {
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date date = new Date();
@@ -66,6 +70,7 @@ public class Historique {
         else
             rentHistList.add(new HistoriqueLocation(dateFormat.format(date), title, director, 5, "Rendu"));
     }
+
 
     public void voirHistBancaire() {
         String res = "";

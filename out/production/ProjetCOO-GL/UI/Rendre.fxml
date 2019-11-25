@@ -10,7 +10,7 @@
     <children>
         <ListView fx:id="listfilm" layoutX="89.0" layoutY="70.0" prefHeight="300.0" prefWidth="200.0"
                   style="-fx-background-color: orange;"/>
-        <Button layoutX="414.0" layoutY="358.0" mnemonicParsing="false" text="Louer" onAction="#Rent" fx:id="rent"/>
+        <Button layoutX="414.0" layoutY="358.0" mnemonicParsing="false" text="Rendre" onAction="#Return" fx:id="rent"/>
         <ImageView fx:id="logo" fitHeight="86.0" fitWidth="198.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#GoHome"
                    pickOnBounds="true" preserveRatio="true">
             <image>

@@ -1,5 +1,9 @@
 01234;Nakamura;Aya;2 rue du tord boyaux;true;0
+<<<<<<< HEAD
 8547;Le Gris;Gandalf;666 rue des 2 tours;true;12
+=======
+8547;Le Gris;Gandalf;666 rue des 2 tours;true;16
+>>>>>>> e45af45555814b2d3721f7e9fc56db08ac11a53f
 6951;Spacey;Kevin;1500 avenue du bout;false;75
 8647;Poutine;Vladimir;0 rue de la Krimée;false;5
 7325;Halliday;Johnny;15 père lachaize;false;5

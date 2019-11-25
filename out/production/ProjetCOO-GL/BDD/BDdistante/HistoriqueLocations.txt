@@ -17,3 +17,9 @@
 8547;Mon Nov 25 14:20:31 CET 2019;Cyborg;Albert Pyun;-1;Rendue
 8547;Mon Nov 25 14:20:31 CET 2019;Cyborg;Albert Pyun;-1;Rendue
 8547;2019/11/25 14:41:51;Crocodile Fury;Ted Kingsbrook;4;Location
+8547;Mon Nov 25 14:55:18 CET 2019;Crocodile Fury;Ted Kingsbrook;-1;Rendue
+8547;2019/11/25 17:40:37;GangLand; Art Camacho;4;Location
+8547;Mon Nov 25 17:40:52 CET 2019;GangLand; Art Camacho;-1;Rendue
+8547;2019/11/25 17:41:23;GangLand; Art Camacho;4;Location
+8547;Mon Nov 25 17:41:31 CET 2019;GangLand; Art Camacho;-1;Rendue
+8547;2019/11/25 17:49:42;GangLand; Art Camacho;4;Location

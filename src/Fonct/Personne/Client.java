@@ -13,6 +13,7 @@ public class Client extends Personne {
     private int currentBalance;
     private Historique historic;
 
+    //Constructeur de client
     public Client(String numCarte, String name, String firstName, String address, Boolean isSubscribed, int currentBalance, Historique historic) throws IOException {
         super(numCarte);
 
@@ -24,17 +25,7 @@ public class Client extends Personne {
         this.historic = historic;
     }
 
-//    public Client(String nom, String prenom, String adresse) throws IOException {
-//        setNumCarte("" + ((int) (Math.random() * 1000000 + 1000000)));
-//
-//        this.nom = nom;
-//        this.prenom = prenom;
-//        this.adresse = adresse;
-//        this.estAbonne = false;
-//        this.soldeActuel = 0;
-//        this.historique = new Historique(getNumCarte());
-//    }
-
+    //permet de louer un film, elle prend en parametre le film souhaité
     public void rentMovie(Film movie) {
         if(isSubscribed) {
             if (this.currentBalance >= 4) {
@@ -46,25 +37,21 @@ public class Client extends Personne {
                 this.currentBalance=currentBalance-5;
                 historic.addLocation(movie.getTitle(), movie.getDirector(), isSubscribed);
             }
-        //retirer un film
     }
 
+    //permet de retourner un film, elle prend un film en parametre
     public void returnMovie(Film movie) {
         historic.retournerLocation(movie.getTitle(), movie.getDirector(), isSubscribed);
-        //ajouter un film dispo
     }
 
-//    public void voirHistorique() {
-//        historic.voirHistLocation();
-//        historic.voirHistBancaire();
-//    }
 
-
+    //permet de recharger le solde client
     public void rechargeAccount(String numCarte, int montant) {
         currentBalance = currentBalance + montant;
         historic.addBancaire(numCarte, montant);
     }
 
+    //prend de devenir vip si l'on possede un solde suffisant
     public boolean becomeVIP() {
         if (this.getCurrentBalance() >= 25) {
             this.setIsSubscribed(true);

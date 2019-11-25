@@ -11,6 +11,7 @@ public class Film {
     private String poster;
     private Boolean novelty;
 
+    //Constructeur de Film
     public Film(String title, String director, String resume, String poster, int nbAvailable, Boolean topSale, Boolean novelty) {
         this.title = title;
         this.director = director;
@@ -19,6 +20,11 @@ public class Film {
         this.topSale = topSale;
         this.poster = poster;
         this.novelty =novelty;
+    }
+
+    public Film(String title, String director) {
+        this.title = title;
+        this.director = director;
     }
 
     public String getResume() {
