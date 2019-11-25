@@ -95,6 +95,6 @@ public class CompteController extends Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        solde.setText(""+cl.getCurrentBalance()+"€");
     }
 }

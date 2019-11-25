@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -33,6 +34,8 @@ public class ControllerHome extends Controller implements Initializable {
     public ImageView top3;
     @FXML
     public TextField textsearch;
+    @FXML
+    public Label solde;
 
 
     public ControllerHome() throws IOException {
@@ -49,6 +52,7 @@ public class ControllerHome extends Controller implements Initializable {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+
         stage.setScene(new Scene(root, 640, 400));
         stage.show();
     }
