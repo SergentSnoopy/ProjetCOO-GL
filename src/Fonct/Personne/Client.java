@@ -39,7 +39,7 @@ public class Client extends Personne {
     //permet de recharger le solde client
     public void rechargeAccount(String numCarte, int montant) {
         currentBalance = currentBalance + montant;
-        historic.addBancaire(numCarte, montant);
+        historic.addBancaire(montant);
     }
 
     //prend de devenir vip si l'on possede un solde suffisant
@@ -56,24 +56,12 @@ public class Client extends Personne {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getFirstName() {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
     public String getAddress() {
         return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     public Boolean getIsSubscribed() {
@@ -96,7 +84,4 @@ public class Client extends Personne {
         return historic;
     }
 
-    public void setHistoric(Historique historic) {
-        this.historic = historic;
-    }
 }

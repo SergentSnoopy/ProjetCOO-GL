@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class Historique {
 
-    String userCardNumber;
+    private String userCardNumber;
     private ArrayList<HistoriqueLocation> rentHistList;
     private ArrayList<HistoriqueBancaire> bankHistList;
 
@@ -22,24 +22,12 @@ public class Historique {
         return rentHistList;
     }
 
-    public void setRentHistList(ArrayList<HistoriqueLocation> rentHistList) {
-        this.rentHistList = rentHistList;
-    }
-
     public ArrayList<HistoriqueBancaire> getBankHistList() {
         return bankHistList;
     }
 
-    public void setBankHistList(ArrayList<HistoriqueBancaire> bankHistList) {
-        this.bankHistList = bankHistList;
-    }
-
     public String getUserCardNumber() {
         return userCardNumber;
-    }
-
-    public void setUserCardNumber(String userCardNumber) {
-        this.userCardNumber = userCardNumber;
     }
 
     //Ajout de la location dans l'historique de location en fonction du status du client (VIP?)
@@ -54,7 +42,7 @@ public class Historique {
     }
 
     //Ajout d'un rechargement bancaire dans l'historique bancaire
-    public void addBancaire(String cardNumber, int amount) {
+    public void addBancaire(int amount) {
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date date = new Date();
 

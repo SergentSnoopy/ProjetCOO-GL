@@ -13,11 +13,11 @@ import java.util.ArrayList;
 
 public class BD_Distante extends BD {
 
-    ArrayList<DemandeAjoutFilm> ajoutsFilms;//liste de films que le technicien devra ajouter
-    ArrayList<Client> clients;//liste de numéros de carte des clients
-    ArrayList<Technicien> techniciens;//liste de numéros de carte des techniciens
-    ArrayList<Film> films;//films dispos sur cyber video
-    ArrayList<Historique> historiques;
+    private ArrayList<DemandeAjoutFilm> ajoutsFilms;//liste de films que le technicien devra ajouter
+    private ArrayList<Client> clients;//liste de numéros de carte des clients
+    private ArrayList<Technicien> techniciens;//liste de numéros de carte des techniciens
+    private ArrayList<Film> films;//films dispos sur cyber video
+    private ArrayList<Historique> historiques;
 
 
     public BD_Distante(String path) throws FileNotFoundException, IOException {
@@ -41,7 +41,6 @@ public class BD_Distante extends BD {
         // hist bancaire
         Infos histsBancaires = super.getInfo("HistoriqueBancaire.txt");
         for (ArrayList<String> info : histsBancaires) {
-            System.out.println(info.get(0));
             HistoriqueBancaire hB = new HistoriqueBancaire(info.get(1)
                     , Integer.parseInt(info.get(2)));
             Historique hist = findClientHist(info.get(0));
@@ -142,23 +141,6 @@ public class BD_Distante extends BD {
             if (t.getCardNumber().equals(numCarte))
                 return t;
         return null;
-    }
-
-    public Boolean supprimerClient(Client c) {
-        for (int i = 0; i < clients.size(); i++) {
-            if (c.getCardNumber().equals(clients.get(i).getCardNumber())) {
-                clients.remove(i);
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public Boolean addClient(Client c) {
-        if (this.identification(c.getCardNumber()) != null)
-            return false;
-        clients.add(c);
-        return true;
     }
 
     public void commit() throws IOException {

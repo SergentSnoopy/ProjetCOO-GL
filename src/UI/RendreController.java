@@ -72,11 +72,10 @@ public class RendreController extends Controller implements Initializable {
 
         }
         else {
-            Date d = new Date();
-            HistoriqueLocation h=new HistoriqueLocation(d.toString(),((HistoriqueLocation)listfilm.getSelectionModel().getSelectedItem()).getMovieTitle(),((HistoriqueLocation)listfilm.getSelectionModel().getSelectedItem()).getDirector(),-1,"Rendue");
-            cl.getHistoric().getRentHistList().add(h);
+
             ArrayList<Film> listFilm=bdl.getFilms();
             Film f = new Film(((HistoriqueLocation) listfilm.getSelectionModel().getSelectedItem()).getMovieTitle(),((HistoriqueLocation) listfilm.getSelectionModel().getSelectedItem()).getDirector());
+            cl.returnMovie(f);
 
             for (int i = 0; i < listFilm.size(); i++) {
                 if(listFilm.get(i).getTitle().equals(f.getTitle()) && listFilm.get(i).getDirector().equals(f.getDirector())){
@@ -115,7 +114,6 @@ public class RendreController extends Controller implements Initializable {
 
                 for (HistoriqueLocation p : temp)
                 {
-                    System.out.println(p.getMovieTitle());
                     if (p.equals(h))
                     {
                         listfilm.getItems().remove(h);

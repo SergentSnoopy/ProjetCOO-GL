@@ -22,8 +22,6 @@ public class TechController extends Controller implements Initializable {
 
     @FXML
     public ImageView logo;
-    @FXML
-    public Label solde;
 
     public TechController() throws IOException {
         super();
@@ -47,6 +45,7 @@ public class TechController extends Controller implements Initializable {
 
     @FXML
     public void GoTop() throws IOException{
+        System.out.println("Top");
         ArrayList<Film> bdlListFilm=bdl.getFilms();
         ArrayList<Integer> indice=new ArrayList<>();
         indice.add(0);
@@ -68,7 +67,9 @@ public class TechController extends Controller implements Initializable {
         }
 
 
-        System.out.println(bdlListFilm.get(indice.get(0)).getTitle()+bdlListFilm.get(indice.get(1)).getTitle()+bdlListFilm.get(indice.get(2)).getTitle());
+        System.out.println("  "+bdlListFilm.get(indice.get(0)).getTitle()+" "+bdlListFilm.get(indice.get(0)).getDirector());
+        System.out.println("  "+bdlListFilm.get(indice.get(1)).getTitle()+" "+bdlListFilm.get(indice.get(1)).getDirector());
+        System.out.println("  "+bdlListFilm.get(indice.get(2)).getTitle()+" "+bdlListFilm.get(indice.get(2)).getDirector());
         bdlListFilm.get(indice.get(0)).setTopSale(true);
         bdlListFilm.get(indice.get(1)).setTopSale(true);
         bdlListFilm.get(indice.get(2)).setTopSale(true);
@@ -98,6 +99,7 @@ public class TechController extends Controller implements Initializable {
                 if(da.get(i).getTitre().equals(bddListeFilm.get(j).getTitle()) && da.get(i).getRealisateur().equals(bddListeFilm.get(j).getDirector())) {
                     bddListeFilm.get(j).setNovelty(true);
                     bdlListFilm.add(bddListeFilm.get(j));
+                    System.out.println("  "+bddListeFilm.get(j).getTitle()+" "+bddListeFilm.get(j).getDirector());
                 }
 
             }

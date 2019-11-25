@@ -13,8 +13,8 @@ public class Controller {
     BD_Locale bdl;
     BD_Distante bdd;
     Client cl;
-    Technicien tech;
-    String typePerso;
+    private Technicien tech;
+    private String typePerso;
 
     public String getTypePerso() {
         return typePerso;

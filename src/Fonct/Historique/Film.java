@@ -31,10 +31,6 @@ public class Film {
         return resume;
     }
 
-    public void setResume(String resume) {
-        this.resume = resume;
-    }
-
     public void rentMovie() {
         nbAvailable--;
     }
@@ -47,24 +43,12 @@ public class Film {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public String getDirector() {
         return director;
     }
 
-    public void setDirector(String director) {
-        this.director = director;
-    }
-
     public int getNbAvailable() {
         return nbAvailable;
-    }
-
-    public void setNbAvailable(int nbAvailable) {
-        this.nbAvailable = nbAvailable;
     }
 
     public Boolean getTopSale() {
@@ -77,10 +61,6 @@ public class Film {
 
     public String getPoster() {
         return poster;
-    }
-
-    public void setPoster(String poster) {
-        this.poster = poster;
     }
 
     @Override

@@ -3,10 +3,6 @@ package Fonct.Personne;
 public abstract class Personne {
     private String cardNumber;
 
-    public Personne() {
-
-    }
-
     public Personne(String cardNumber) {
         this.cardNumber = cardNumber;
     }
@@ -15,7 +11,4 @@ public abstract class Personne {
         return cardNumber;
     }
 
-    public void setCardNumber(String cardNumber) {
-        this.cardNumber = cardNumber;
-    }
 }
