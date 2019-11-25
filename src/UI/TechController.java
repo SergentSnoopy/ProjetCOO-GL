@@ -74,6 +74,12 @@ public class TechController extends Controller implements Initializable {
         bdlListFilm.get(indice.get(2)).setTopSale(true);
 
         bdl.commit(bdlListFilm);
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Top Vente");
+        alert.setHeaderText("Top Vente");
+        alert.setContentText("Vous avez modifier les tops ventes");
+        alert.showAndWait();
     }
 
     @FXML
@@ -98,10 +104,11 @@ public class TechController extends Controller implements Initializable {
         }
 
         bdl.commit(bdlListFilm);
-    }
-
-    public void GoNew() {
-        System.out.println("New");
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Film Ajouté");
+        alert.setHeaderText("Film Ajouté");
+        alert.setContentText("Vous avez rajouter les films demandés dans la machine");
+        alert.showAndWait();
     }
 
     @FXML

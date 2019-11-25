@@ -8,14 +8,13 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.TechController">
    <children>
       <Button layoutX="274.0" layoutY="94.0" mnemonicParsing="false" onMouseClicked="#GoAdd" text="Ajout Film" />
-      <Button layoutX="276.0" layoutY="188.0" mnemonicParsing="false" onMouseClicked="#GoTop" text="Top Vente" />
-      <Button layoutX="291.0" layoutY="234.0" mnemonicParsing="false" onMouseClicked="#GoStat" text="Stats" />
-      <Button layoutX="270.0" layoutY="293.0" mnemonicParsing="false" onMouseClicked="#Eject" text="Ejecter Carte" />
+      <Button layoutX="274.0" layoutY="147.0" mnemonicParsing="false" onMouseClicked="#GoTop" text="Top Vente" />
+      <Button layoutX="289.0" layoutY="193.0" mnemonicParsing="false" onMouseClicked="#GoStat" text="Stats" />
+      <Button layoutX="268.0" layoutY="252.0" mnemonicParsing="false" onMouseClicked="#Eject" text="Ejecter Carte" />
       <ImageView fx:id="logo" fitHeight="86.0" fitWidth="198.0" layoutX="24.0" layoutY="24.0" onMouseClicked="#GoHome" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Img/logo.png" />
          </image>
       </ImageView>
-      <Button layoutX="285.0" layoutY="145.0" mnemonicParsing="false" text="Home" onMouseClicked="#GoNew" />
    </children>
 </AnchorPane>
