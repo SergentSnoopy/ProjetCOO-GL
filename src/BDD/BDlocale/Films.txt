@@ -1,20 +1,11 @@
 Terminator;James Cameron;A Los Angeles en 1984, un Terminator, cyborg surgi du futur, a pour mission d'exécuter Sarah Connor, une jeune femme dont l'enfant à naître doit sauver l'humanité. Kyle Reese, un résistant humain, débarque lui aussi pour combattre le robot, et aider la jeune femme...;terminator.jpg;5;true;false;5
 Predator;Johon McTiernan;Schwarzenegger contre un alien dans la jungle;predator.jpg;6;false;false;6
-<<<<<<< HEAD
 Fight Club;David Fincher;Le narrateur, sans identité précise, vit seul, travaille seul, dort seul, mange seul ses plateaux-repas pour une personne comme beaucoup d'autres personnes seules qui connaissent la misère humaine, morale et sexuelle.;fight_club.jpg;9;true;false;9
-L'Armée des 12 singes;Terry Gilliam;Nous sommes en l'an 2035. Les quelques milliers d'habitants qui restent sur notre planète sont contraints de vivre sous terre. La surface du globe est devenue inhabitable à la suite d'un virus ayant décimé 99% de la population. Les survivants mettent tous leurs espoirs dans un voyage à travers le temps pour découvrir les causes de la catastrophe et la prévenir. C'est James Cole, hanté depuis des années par une image incompréhensible, qui est désigné pour cette mission.;douze.jpg;2;false;false;2
-Rambo;Ted Kotcheff;John Rambo, ancien combattant du Viêt-nam où il a gagné plusieurs médailles, est arrêté dans une petite ville pour vagabondage.Maltraité, il décide de fuir. La chasse à l’homme commence…;rambo.jpg;7;false;false;7
-Cyborg;Albert Pyun;JCVD Le cyborg du futur;JCVD.jpg;0;false;false;0
-GangLand; Art Camacho;Ice-t contre les gangs;gang.jpg;15;true;false;15
-Crocodile Fury;Ted Kingsbrook;Des divinité crocodile contre un americain;croco.jpg;3;true;false;3
-=======
-Fight Club;David Fincher;Le narrateur, sans identité précise, vit seul, travaille seul, dort seul, mange seul ses plateaux-repas pour une personne comme beaucoup d'autres personnes seules qui connaissent la misère humaine, morale et sexuelle.;fight_club.jpg;9;true;false;10
 L'Armée des 12 singes;Terry Gilliam;Nous sommes en l'an 2035. Les quelques milliers d'habitants qui restent sur notre planète sont contraints de vivre sous terre. La surface du globe est devenue inhabitable à la suite d'un virus ayant décimé 99% de la population. Les survivants mettent tous leurs espoirs dans un voyage à travers le temps pour découvrir les causes de la catastrophe et la prévenir. C'est James Cole, hanté depuis des années par une image incompréhensible, qui est désigné pour cette mission.;douze.jpg;3;false;true;3
 Rambo;Ted Kotcheff;John Rambo, ancien combattant du Viêt-nam où il a gagné plusieurs médailles, est arrêté dans une petite ville pour vagabondage.Maltraité, il décide de fuir. La chasse à l’homme commence…;rambo.jpg;7;false;false;7
-Cyborg;Albert Pyun;JCVD Le cyborg du futur;JCVD.jpg;0;false;false;9
-GangLand; Art Camacho;Ice-t contre les gangs;gang.jpg;13;true;true;15
-Crocodile Fury;Ted Kingsbrook;Des divinité crocodile contre un americain;croco.jpg;5;true;true;10
->>>>>>> e45af45555814b2d3721f7e9fc56db08ac11a53f
+Cyborg;Albert Pyun;JCVD Le cyborg du futur;JCVD.jpg;0;false;false;0
+GangLand; Art Camacho;Ice-t contre les gangs;gang.jpg;13;true;true;13
+Crocodile Fury;Ted Kingsbrook;Des divinité crocodile contre un americain;croco.jpg;5;true;true;5
 La malédiction des rats;Damian Lee;Des rats, devenue affamé attaquent des humains;rats.jpg;9;false;false;9
 Turkish Star Wars;cetin Inanc;Turkish Star Wars;tsw.jpg;18;false;false;18
 Blood Freak;Steve Hawkes;Un homme mange une dinde radioactive est se transforme peu a peu en monstre, mi-homme mi-dindon;blood.jpg;4;false;true;4
