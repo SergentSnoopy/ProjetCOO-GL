@@ -18,7 +18,7 @@
             </image>
         </ImageView>
       <Label layoutX="444.0" layoutY="28.0" text="Solde :" />
-      <Label layoutX="493.0" layoutY="28.0" />
+      <Label layoutX="493.0" layoutY="28.0" fx:id="solde"/>
       <Button layoutX="428.0" layoutY="155.0" mnemonicParsing="false" onAction="#GoRendre" text="Rendre FIlm" />
     </children>
 </AnchorPane>

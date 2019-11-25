@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
@@ -17,6 +18,8 @@ public class CompteController extends Controller implements Initializable {
 
     @FXML
     public ImageView logo;
+    @FXML
+    public Label solde;
 
     public CompteController() throws IOException {
         super();

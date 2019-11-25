@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class HistoriqueController extends Controller implements Initializable {
+public class RendreController extends Controller implements Initializable {
 
     @FXML
     public ImageView logo;
@@ -28,7 +28,7 @@ public class HistoriqueController extends Controller implements Initializable {
     @FXML
     public ListView lhist;
 
-    public HistoriqueController() throws IOException {
+    public RendreController() throws IOException {
         super();
     }
 
