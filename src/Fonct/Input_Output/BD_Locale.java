@@ -42,13 +42,8 @@ public class BD_Locale extends BD {
         return -1;
     }
 
-    public void resetLoc() {
-    	for(FilmWrapper fw : this.films)
-    		fw.nbLoc = 0;
-    }
-
-    public void commit(ArrayList<Film> films) throws IOException {
-        // reconstruction de la liste de films
+    public void commit(ArrayList<Film> films, boolean resetLoc) throws IOException {
+    	// reconstruction de la liste de films
         // si on a eu des locations alors màj du nombre de films loués
         // si on a des films qui ne sont plus dispos (suppr par un tech) on les supprime
         ArrayList<FilmWrapper> newFilms = new ArrayList<FilmWrapper>();
@@ -57,12 +52,17 @@ public class BD_Locale extends BD {
             if (fw != null) {
                 int n = film.getNbAvailable() - fw.nbLoc;
                 fw.nbLoc = (n > 0) ? fw.nbLoc + n : fw.nbLoc;
+                fw.nbLoc = (resetLoc == true)?0:fw.nbLoc;
             } else
                 fw = new FilmWrapper(film, 0);
             newFilms.add(fw);
         }
         this.films = newFilms;
         write();
+    }
+
+    public void commit(ArrayList<Film> films) throws IOException {
+        this.commit(films,false);
     }
 
     private void write() throws IOException {
