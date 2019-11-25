@@ -227,8 +227,17 @@ public class BD_Distante extends BD {
         });
     }
 
-    private class DemandeAjoutFilm {
+    public class DemandeAjoutFilm {
         String titre;
+
+        public String getTitre() {
+            return titre;
+        }
+
+        public String getRealisateur() {
+            return realisateur;
+        }
+
         String realisateur;
 
         public DemandeAjoutFilm(String titre, String realisateur) {

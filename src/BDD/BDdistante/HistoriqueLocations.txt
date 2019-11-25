@@ -18,3 +18,9 @@
 8547;Mon Nov 25 14:20:31 CET 2019;Cyborg;Albert Pyun;-1;Rendue
 8547;2019/11/25 14:41:51;Crocodile Fury;Ted Kingsbrook;4;Location
 8547;Mon Nov 25 14:55:18 CET 2019;Crocodile Fury;Ted Kingsbrook;-1;Rendue
+8547;2019/11/25 15:54:25;Crocodile Fury;Ted Kingsbrook;4;Location
+8547;2019/11/25 15:54:29;Crocodile Fury;Ted Kingsbrook;4;Location
+8547;2019/11/25 15:54:31;L'Armée des 12 singes;Terry Gilliam;4;Location
+8547;2019/11/25 15:54:40;Fight Club;David Fincher;4;Location
+8547;Mon Nov 25 15:55:11 CET 2019;L'Armée des 12 singes;Terry Gilliam;-1;Rendue
+8547;Mon Nov 25 15:55:14 CET 2019;Fight Club;David Fincher;-1;Rendue

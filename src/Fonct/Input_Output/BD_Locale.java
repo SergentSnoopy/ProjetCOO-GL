@@ -42,6 +42,14 @@ public class BD_Locale extends BD {
         return -1;
     }
 
+    public void resetLoc(Film f) {//
+        FilmWrapper fw = this.findFilmWithKeys(f.getTitle(), f.getDirector());
+        if (fw != null) {
+            System.out.println("ici");
+            fw.setNbLoc(0);
+        }
+    }
+
     public void commit(ArrayList<Film> films) throws IOException {
         // reconstruction de la liste de films
         // si on a eu des locations alors màj du nombre de films loués
@@ -70,9 +78,13 @@ public class BD_Locale extends BD {
         });
     }
 
-    private class FilmWrapper {
+    public class FilmWrapper {
         Film film;
         int nbLoc;
+
+        public void setNbLoc(int nbLoc) {
+            this.nbLoc = nbLoc;
+        }
 
         public FilmWrapper(Film f, int n) {
             this.film = f;
