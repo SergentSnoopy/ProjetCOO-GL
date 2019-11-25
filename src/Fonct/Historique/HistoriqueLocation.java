@@ -1,5 +1,7 @@
 package Fonct.Historique;
 
+import java.util.Objects;
+
 public class HistoriqueLocation {
 
     private String date;
@@ -14,6 +16,19 @@ public class HistoriqueLocation {
         this.director = director;
         this.locationPrice = locationPrice;
         this.actionType = actionType;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        HistoriqueLocation that = (HistoriqueLocation) o;
+        return movieTitle.equals(that.movieTitle);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(movieTitle);
     }
 
     public String getDate() {

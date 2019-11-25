@@ -5,6 +5,6 @@ L'Armée des 12 singes;Terry Gilliam;Nous sommes en l'an 2035. Les quelques mill
 Rambo;Ted Kotcheff;John Rambo, ancien combattant du Viêt-nam où il a gagné plusieurs médailles, est arrêté dans une petite ville pour vagabondage.Maltraité, il décide de fuir. La chasse à l’homme commence…;rambo.jpg;7;false;false;7
 Cyborg;Albert Pyun;JCVD Le cyborg du futur;JCVD.jpg;0;false;false;9
 GangLand; Art Camacho;Ice-t contre les gangs;gang.jpg;15;true;true;15
-Crocodile Fury;Ted Kingsbrook;Des divinité crocodile contre un americain;croco.jpg;6;true;true;10
+Crocodile Fury;Ted Kingsbrook;Des divinité crocodile contre un americain;croco.jpg;5;true;true;10
 La malédiction des rats;Damian Lee;Des rats, devenue affamé attaquent des humains;rats.jpg;9;false;false;9
 Turkish Star Wars;cetin Inanc;Turkish Star Wars;tsw.jpg;18;false;true;18
