@@ -103,6 +103,8 @@ public class SearchController extends Controller {
     public void Rent() throws IOException {
         ArrayList<Film> filmlist;
         Film f = (Film)listfilm.getSelectionModel().getSelectedItem();
+
+
         if(f.getNbAvailable()>0) {
             cl.rentMovie(f);
             f.rentMovie();

@@ -8,29 +8,14 @@
             prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: orange;"
             xmlns="http://javafx.com/javafx/8.0.171" fx:controller="UI.RendreController">
     <children>
-        <TextField layoutX="224.0" layoutY="32.0" fx:id="ts"/>
-        <ImageView fx:id="search" fitHeight="25.0" fitWidth="29.0" layoutX="373.0" layoutY="32.0" pickOnBounds="true"
-                   preserveRatio="true">
-            <image>
-                <Image url="@../Img/search.png"/>
-            </image>
-        </ImageView>
         <ListView fx:id="listfilm" layoutX="89.0" layoutY="70.0" prefHeight="300.0" prefWidth="200.0"
                   style="-fx-background-color: orange;"/>
-        <Label fx:id="titre" layoutX="345.0" layoutY="47.0" minHeight="17" minWidth="247" textAlignment="CENTER"/>
-
-        <ImageView fx:id="aff" fitHeight="150.0" fitWidth="107.0" layoutX="384.0" layoutY="64.0" pickOnBounds="true"
-                   preserveRatio="true"/>
         <Button layoutX="414.0" layoutY="358.0" mnemonicParsing="false" text="Louer" onAction="#Rent" fx:id="rent"/>
-        <Button layoutX="414.0" layoutY="358.0" mnemonicParsing="false" text="Demander film" onAction="#Ask" fx:id="ask"
-                visible="false"/>
         <ImageView fx:id="logo" fitHeight="86.0" fitWidth="198.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#GoHome"
                    pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../Img/logo.png"/>
             </image>
         </ImageView>
-        <Text fx:id="desc" layoutX="300.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER"
-              wrappingWidth="340.0"/>
     </children>
 </AnchorPane>
