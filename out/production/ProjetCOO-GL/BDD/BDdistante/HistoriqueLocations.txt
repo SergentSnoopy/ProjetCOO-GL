@@ -8,3 +8,6 @@
 8547;2019/11/25 11:53:23;Cyborg;Albert Pyun;4;Location
 8547;2019/11/25 11:53:23;Cyborg;Albert Pyun;4;Location
 8547;2019/11/25 11:53:23;Cyborg;Albert Pyun;4;Location
+8547;2019/11/25 13:45:02;Crocodile Fury;Ted Kingsbrook;4;Location
+8547;2019/11/25 15:57:04;Crocodile Fury;Ted Kingsbrook;4;Location
+8547;2019/11/25 15:58:38;Fight Club;David Fincher;4;Location
