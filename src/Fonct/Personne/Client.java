@@ -36,8 +36,16 @@ public class Client extends Personne {
 //    }
 
     public void rentMovie(Film movie) {
-        historic.addLocation(movie.getTitle(), movie.getDirector(), isSubscribed);
-        this.setCurrentBalance(this.getCurrentBalance() - (isSubscribed ? 4 : 5));
+        if(isSubscribed) {
+            if (this.currentBalance >= 4) {
+                this.currentBalance = this.currentBalance - 4;
+                historic.addLocation(movie.getTitle(), movie.getDirector(), isSubscribed);
+            }
+        }else
+            if(this.currentBalance>=5){
+                this.currentBalance=currentBalance-5;
+                historic.addLocation(movie.getTitle(), movie.getDirector(), isSubscribed);
+            }
         //retirer un film
     }
 

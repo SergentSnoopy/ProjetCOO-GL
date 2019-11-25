@@ -101,9 +101,19 @@ public class SearchController extends Controller {
 
     @FXML
     public void Rent() throws IOException {
-
-        cl.rentMovie(((Film) listfilm.getSelectionModel().getSelectedItem()));
-        bdd.commit();
+        ArrayList<Film> filmlist;
+        Film f = (Film)listfilm.getSelectionModel().getSelectedItem();
+        if(f.getNbAvailable()>0) {
+            cl.rentMovie(f);
+            f.rentMovie();
+            filmlist = bdl.getFilms();
+            for(int i = 0; i < filmlist.size(); i++){
+                if(filmlist.get(i).getTitle().equals(f.getTitle()) && filmlist.get(i).getDirector().equals(f.getDirector()))
+                  filmlist.set(i,f);
+            }
+            bdd.commit();
+            bdl.commit(filmlist);
+        }
     }
 
     @FXML

@@ -61,7 +61,7 @@ public class BD_Locale extends BD {
     }
 
     private void write() throws IOException {
-        super.write("film.txt", new Infos.Writable<FilmWrapper>(this.films) {
+        super.write("Films.txt", new Infos.Writable<FilmWrapper>(this.films) {
             public String parse(FilmWrapper fw) {
                 Film f = fw.film;
                 return f.getTitle() + ";" + f.getDirector() + ";" + f.getResume() + ";" + f.getPoster() + ";" + f.getNbAvailable()
