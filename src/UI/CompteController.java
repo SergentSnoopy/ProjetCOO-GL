@@ -29,7 +29,15 @@ public class CompteController extends Controller implements Initializable {
 
     @FXML
     public void GoRendre() {
-        System.out.println("Test");
+        Stage stage = (Stage) logo.getScene().getWindow();
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("Rendre.fxml"));
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        stage.setScene(new Scene(root, 640, 400));
+        stage.show();
     }
 
     @FXML
