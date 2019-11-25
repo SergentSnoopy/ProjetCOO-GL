@@ -42,12 +42,9 @@ public class BD_Locale extends BD {
         return -1;
     }
 
-    public void resetLoc(Film f) {//
-        FilmWrapper fw = this.findFilmWithKeys(f.getTitle(), f.getDirector());
-        if (fw != null) {
-            System.out.println("ici");
-            fw.setNbLoc(0);
-        }
+    public void resetLoc() {
+    	for(FilmWrapper fw : this.films)
+    		fw.nbLoc = 0;
     }
 
     public void commit(ArrayList<Film> films) throws IOException {
