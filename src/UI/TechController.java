@@ -100,10 +100,6 @@ public class TechController extends Controller implements Initializable {
         bdl.commit(bdlListFilm);
     }
 
-    public void GoNew() {
-        System.out.println("New");
-    }
-
     @FXML
     public void GoHome() {
 
