@@ -42,13 +42,38 @@ public class TechController extends Controller implements Initializable {
         for (int i = 0; i < AlFilm.size() ; i++) {
             System.out.println(" " + AlFilm.get(i).getTitle() + " - " + AlFilm.get(i).getDirector() + " - " + bdl.getLoc(AlFilm.get(i)));
         }
-        bdl.resetLoc();
-        bdl.commit(bdl.getFilms());
+        bdl.commit(bdl.getFilms(),true);
     }
 
     @FXML
-    public void GoTop() {
-        System.out.println("Top");
+    public void GoTop() throws IOException{
+        ArrayList<Film> bdlListFilm=bdl.getFilms();
+        ArrayList<Integer> indice=new ArrayList<>();
+        indice.add(0);
+        indice.add(0);
+        indice.add(0);
+
+        for (int i = 0; i < bdlListFilm.size(); i++) {
+            if(bdl.getLoc(bdlListFilm.get(i))>bdl.getLoc(bdlListFilm.get(indice.get(0)))){
+                indice.set(2,indice.get(1));
+                indice.set(1,indice.get(0));
+                indice.set(0,i);
+            }else if (bdl.getLoc(bdlListFilm.get(i))>bdl.getLoc(bdlListFilm.get(indice.get(1)))){
+                indice.set(2,indice.get(1));
+                indice.set(1,i);
+            }else if (bdl.getLoc(bdlListFilm.get(i))>bdl.getLoc(bdlListFilm.get(indice.get(2)))){
+                indice.set(2,i);
+            }
+            bdlListFilm.get(i).setTopSale(false);
+        }
+
+
+        System.out.println(bdlListFilm.get(indice.get(0)).getTitle()+bdlListFilm.get(indice.get(1)).getTitle()+bdlListFilm.get(indice.get(2)).getTitle());
+        bdlListFilm.get(indice.get(0)).setTopSale(true);
+        bdlListFilm.get(indice.get(1)).setTopSale(true);
+        bdlListFilm.get(indice.get(2)).setTopSale(true);
+
+        bdl.commit(bdlListFilm);
     }
 
     @FXML
